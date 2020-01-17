@@ -24,14 +24,14 @@
 {% block breadcrumb %}
 
 <ol class="breadcrumb">
-    <li><i class="fa fa-clone"></i> Replication </li>
-    <li><i class="fa fa-calendar"></i> &nbsp;Jobs </li>
+    <li><i class="fa fa-clone"></i> 远程复制 </li>
+    <li><i class="fa fa-calendar"></i> &nbsp;复制任务 </li>
 
 </ol>
 {% endblock %}
 
 
-{% block content_header%} Replication Jobs {% endblock %}
+{% block content_header%} 复制任务 {% endblock %}
 {% block content %}
 
 <!-- New --><!-- Style added for the linkable rows in the table -->
@@ -94,7 +94,7 @@
                                   id="addReplicationJob">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="glyphicon glyphicon-plus"></i>
-                                    &nbsp;Add Job
+                                    &nbsp;新建任务
                                 </button>
                             </form>
                         </div>
@@ -104,7 +104,7 @@
                         <div class="col-md-1">
                             <a class="btn btn-primary" id="activeJobs" href="#" data-toggle="modal"
                                data-target="#activeJobsModal"
-                               onclick=""><i class="glyphicon glyphicon-th-list"></i>&nbsp;&nbsp;Active Jobs</a>
+                               onclick=""><i class="glyphicon glyphicon-th-list"></i>&nbsp;&nbsp;启动任务</a>
                         </div>
                         <!-- End Of Active Replication Jobs Button -->
                     </div>
@@ -138,14 +138,14 @@
                             <!-- ------------ -->
                             <thead>
                             <tr>
-                                <th>Job Id</th>
-                                <th>Name</th>
-                                <th>Frequency</th>
-                                <th>Source Disk</th>
-                                <th>Destination Cluster</th>
-                                <th>Destination Disk</th>
-                                <th>Status</th>
-                                <th>Actions</th>
+                                <th>任务Id</th>
+                                <th>名称</th>
+                                <th>频率</th>
+                                <th>源盘</th>
+                                <th>目标集群</th>
+                                <th>目标盘</th>
+                                <th>状态</th>
+                                <th>操作</th>
                             </tr>
                             </thead>
 
@@ -205,7 +205,7 @@
                                 <td>
                                     <!-- Start Button -->
                                     {% if rep_job_entity.status == "stopped" %}
-                                    <div title="Start" class="btn-group">
+                                    <div title="启动" class="btn-group">
                                         <form action="{{ url_for('replication_controller.start_job', job_id = rep_job_entity.job_id) }}" method="post">
                                             <button type="submit" class="btn btn-default">
                                                 <i class="fa fa-play"></i>
@@ -214,7 +214,7 @@
                                     </div>
                                     {% elif rep_job_entity.status == "started" %}
                                     <!-- Stop Button -->
-                                    <div title="Stop" class="btn-group">
+                                    <div title="停止" class="btn-group">
                                         <form action="{{ url_for('replication_controller.stop_job', job_id = rep_job_entity.job_id) }}" method="post">
                                             <button onclick="return doStop('{{rep_job_entity.job_name }}');"
                                                     type="submit" class="btn btn-default">
@@ -227,7 +227,7 @@
                                     <span>&nbsp;</span>
 
                                     <!-- Edit Button -->
-                                    <div title="Edit" class="btn-group ">
+                                    <div title="编辑" class="btn-group ">
                                         <form action="{{ url_for('replication_controller.view_job', job_id = rep_job_entity.job_id) }}" method="post">
                                             <button type="submit" class="btn btn-default">
                                                 <i class="fa fa-edit"></i>
@@ -238,7 +238,7 @@
                                     <span>&nbsp;</span>
 
                                     <!-- Delete Button -->
-                                    <div title="Delete" class="btn-group ">
+                                    <div title="删除" class="btn-group ">
                                         <form action="{{ url_for('replication_controller.delete_job', job_id = rep_job_entity.job_id) }}" method="post">
                                             <button onclick="return doDelete('{{rep_job_entity.job_name }}');"
                                                     type="submit" class="btn btn-default">
@@ -250,7 +250,7 @@
                                     <span>&nbsp;</span>
 
                                     <!-- View Log Button -->
-                                    <div title="View Log" class="btn-group">
+                                    <div title="查看日志" class="btn-group">
                                         <form action="{{ url_for('replication_controller.view_job_log', job_name=rep_job_entity.job_name, job_id = rep_job_entity.job_id) }}" method="get">
                                             <button type="submit" class="btn btn-default">
                                                 <i class="fa fa-fw fa-list"></i></button>

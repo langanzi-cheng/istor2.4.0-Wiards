@@ -27,12 +27,12 @@
 {% block title %}<title> Edit Pool </title>{% endblock %}
 {% block breadcrumb %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-wrench"></i> Configuration </li>
-    <li><i class="fa fa-database"></i> <a  href="/configuration/pools">Pools</a></li>
-    <li><i class="fa fa-database"></i> Edit Pool</li>
+    <li><i class="fa fa-wrench"></i> 存储配置 </li>
+    <li><i class="fa fa-database"></i> <a  href="/configuration/pools">存储池</a></li>
+    <li><i class="fa fa-database"></i> 编辑存储池</li>
 </ol>
 {% endblock %}
-{% block content_header %} Edit Pool {% endblock %}
+{% block content_header %} 编辑存储池 {% endblock %}
 {% block content %}
 
 
@@ -51,7 +51,7 @@
                                                     <button type="button" class="close"
                                                             onclick="$('#replicas_no_alert').hide();" aria-hidden="true">×
                                                     </button>
-                                                    <h4><i class="icon fa fa-warning"></i> Warning!</h4>
+                                                    <h4><i class="icon fa fa-warning"></i> 警告!</h4>
                                                     <span id="test_message">
                                                         {{ gettext("ui_add_edit_pool_min_replicas_no_alert_msg") }}
                                                     </span>
@@ -81,7 +81,7 @@
                             <div class="row">
                                 <div class=" col-md-4">
                                     <div class="form-group">
-                                        <label id="lblName" class="control-label">Pool Name:&nbsp;&nbsp;&nbsp;</label>
+                                        <label id="lblName" class="control-label">名称:&nbsp;&nbsp;&nbsp;</label>
 
                                         <p>{{ selected_pool.name }}</p>
                                         <input type="hidden" value="{{ selected_pool.name }}" name="name">
@@ -94,7 +94,7 @@
                             <div class="row">
                                 <div class=" col-md-4">
                                     <div class="form-group">
-                                        <label id="lblType" class="control-label">Pool Type:&nbsp;&nbsp;&nbsp;</label>
+                                        <label id="lblType" class="control-label">类型:&nbsp;&nbsp;&nbsp;</label>
 
                                         <p>{{ selected_pool.type }}</p>
                                         <input type="hidden" value="{{ selected_pool.type }}" name="pool_type">
@@ -120,8 +120,8 @@
                             <div class="row">
                                 <div class=" col-md-4">
                                     <div class="form-group">
-                                        <label id="lbl_Rep_PG" class="control-label">Number of
-                                            PGs:&nbsp;&nbsp;&nbsp;</label>
+                                        <label id="lbl_Rep_PG" class="control-label">
+                                            PG数量:&nbsp;&nbsp;&nbsp;</label>
 
                                         <p>{{ selected_pool.pg_num }}</p>
                                         <input type="hidden" value="{{ selected_pool.pg_num }}"
@@ -135,7 +135,7 @@
                             <div class="row">
                                 <div class=" col-md-4">
                                     <div class="form-group">
-                                        <label for="rep_replica_size" class="control-label">Size:<font
+                                        <label for="rep_replica_size" class="control-label">副本数:<font
                                                 color="red">*</font></label>
 
                                         <select id="rep_replica_size" name="rep_replica_size"
@@ -163,7 +163,7 @@
                                 <div class=" col-md-4">
                                     <div class="form-group">
                                         <label id="lbl_Rep_MinRep" for="rep_replica_min_size"
-                                               class="control-label">Min Size:<font
+                                               class="control-label">最小副本数:<font
                                                 color="red">*</font></label>
 
                                         <select id="rep_replica_min_size" name="rep_replica_min_size"
@@ -190,7 +190,7 @@
                             <div class="row">
                                 <div class=" col-md-4">
                                     <div class="form-group">
-                                        <label class="control-label">Compression:</label>
+                                        <label class="control-label">压缩:</label>
 
                                         <!-- Enabled & Disabled -->
                                         <div class="row">
@@ -203,7 +203,7 @@
                                                                checked="checked" {% endif %}
                                                                id="rep_enabled"
                                                                {% if 'filestore' == storage_engine %}disabled{% endif %}>
-                                                        &nbsp;Enabled
+                                                        &nbsp;启用
                                                     </label>
                                                 </div>
                                             </div>
@@ -215,7 +215,7 @@
                                                                {% if selected_pool.compression_mode=="none" %}
                                                                checked="checked" {% endif %}
                                                                id="rep_disabled">
-                                                        &nbsp;Disabled
+                                                        &nbsp;禁用
                                                     </label>
                                                 </div>
                                             </div>
@@ -232,8 +232,7 @@
                             <div class="row">
                                 <div class=" col-md-4" id="Rep_CompressionAlg" style="display: none">
                                     <div class="form-group">
-                                        <label for="rep_compression_algorithm" class="control-label">Compression
-                                            Algorithm:<font
+                                        <label for="rep_compression_algorithm" class="control-label">压缩算法:<font
                                                     color="red">*</font></label>
 
                                         <select id="rep_compression_algorithm" name="rep_compression_algorithm"
@@ -262,8 +261,7 @@
                             <div class="row">
                                 <div class=" col-md-4">
                                     <div class="form-group">
-                                        <label id="lbl_Rep_RuleName" for="rep_rule_name" class="control-label">Rule
-                                            Name:<font
+                                        <label id="lbl_Rep_RuleName" for="rep_rule_name" class="control-label">规则名:<font
                                                     color="red">*</font></label>
 
                                         <select id="rep_rule_name" name="rep_rule_name" class="form-control">
@@ -301,7 +299,7 @@
                             <div class="row">
                                 <div class=" col-md-4">
                                     <div class="form-group">
-                                        <label id="lbl_EC_Profile" class="control-label">EC Profile:</label>
+                                        <label id="lbl_EC_Profile" class="control-label">纠删码规则:</label>
 
                                         <p>{{ selected_pool.ec_profile }}</p>
                                         <input type="hidden" value="{{ selected_pool.ec_profile }}"
@@ -316,8 +314,8 @@
                             <div class="row">
                                 <div class=" col-md-4">
                                     <div class="form-group">
-                                        <label id="lbl_EC_PG" class="control-label">Number of
-                                            PGs:&nbsp;&nbsp;&nbsp;</label>
+                                        <label id="lbl_EC_PG" class="control-label">
+                                            PG数量:&nbsp;&nbsp;&nbsp;</label>
 
                                         <p>{{ selected_pool.pg_num }}</p>
                                         <input type="hidden" value="{{ selected_pool.pg_num }}"
@@ -331,13 +329,13 @@
                             <div class="row">
                                 <div class=" col-md-4">
                                     <div class="form-group">
-                                        <label id="lbl_EC_Size" class="control-label">Size:</label>
+                                        <label id="lbl_EC_Size" class="control-label">盘数:</label>
                                         <input type="hidden" value="{{ selected_pool.size }}" name="ec_size">
 
                                         <div class="row">
                                             <!-- EC : K -->
                                             <div class=" col-md-1">
-                                                <label id="lbl_EC_K" class="control-label">K:</label>
+                                                <label id="lbl_EC_K" class="control-label">数据盘数量:</label>
                                             </div>
                                             <div class=" col-md-2">
                                                 <p>{{ selected_pool_profile.k }}</p>
@@ -348,7 +346,7 @@
                                             </div>
                                             <!-- EC : M -->
                                             <div class=" col-md-1">
-                                                <label id="lbl_EC_M" class="control-label">M:</label>
+                                                <label id="lbl_EC_M" class="control-label">校验盘数量:</label>
                                             </div>
                                             <div class=" col-md-2">
                                                 <p>{{ selected_pool_profile.m }}</p>
@@ -364,7 +362,7 @@
                             <div class="row">
                                 <div class=" col-md-4">
                                     <div class="form-group">
-                                        <label id="lbl_EC_MinSize" for="ec_min_size" class="control-label">Min Size:<font
+                                        <label id="lbl_EC_MinSize" for="ec_min_size" class="control-label">最小盘数:<font
                                                 color="red">*</font>
                                             <i data-toggle="tooltip"
                                                title='{{ gettext("ui_admin_ec_pool_min_size_label_tooltip") }}'
@@ -382,7 +380,7 @@
                             <div class="row">
                                 <div class=" col-md-4">
                                     <div class="form-group">
-                                        <label id="lbl_EC_Compression" class="control-label">Compression:</label>
+                                        <label id="lbl_EC_Compression" class="control-label">压缩:</label>
 
                                         <!-- Enabled & Disabled -->
                                         <div class="row">
@@ -394,7 +392,7 @@
                                                                {% if selected_pool.compression_mode!="none" %}
                                                                checked="checked" {% endif %}
                                                                id="ec_enabled">
-                                                        &nbsp;Enabled
+                                                        &nbsp;启用
                                                     </label>
                                                 </div>
                                             </div>
@@ -406,7 +404,7 @@
                                                                {% if selected_pool.compression_mode=="none" %}
                                                                checked="checked" {% endif %}
                                                                id="ec_disabled">
-                                                        &nbsp;Disabled
+                                                        &nbsp;禁用
                                                     </label>
                                                 </div>
                                             </div>
@@ -422,8 +420,7 @@
                             <div class="row">
                                 <div class=" col-md-4" id="EC_CompressionAlg" style="display: none">
                                     <div class="form-group">
-                                        <label for="ec_compression_algorithm" class="control-label">Compression
-                                            Algorithm:<font
+                                        <label for="ec_compression_algorithm" class="control-label">压缩算法:<font
                                                     color="red">*</font></label>
 
                                         <select id="ec_compression_algorithm" name="ec_compression_algorithm"
@@ -451,7 +448,7 @@
                             <div class="row">
                                 <div class=" col-md-4">
                                     <div class="form-group">
-                                        <label id="lbl_EC_RuleName" for="ec_rule_name" class="control-label">Rule Name:<font
+                                        <label id="lbl_EC_RuleName" for="ec_rule_name" class="control-label">规则名:<font
                                                 color="red">*</font></label>
 
                                         <select id="ec_rule_name" name="ec_rule_name" class="form-control" onchange="get_Min_Max_rule_values(this.value)">
@@ -520,11 +517,11 @@
                             <div class="form-group">
                                 <div class="box-footer">
 
-                                    <button type="submit" class="btn btn-primary pull-right " value="submit">Save
+                                    <button type="submit" class="btn btn-primary pull-right " value="submit">保存
                                     </button>
 
                                     <button type="button" style="margin-right: 10px"
-                                            class="btn btn-default pull-right" id="cancelBtn" value="cancel">Cancel
+                                            class="btn btn-default pull-right" id="cancelBtn" value="cancel">取消
                                     </button>
                                 </div>
                             </div>

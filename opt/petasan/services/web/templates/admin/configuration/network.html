@@ -25,11 +25,11 @@
 {% block title %}<title> iSCSI Settings</title>{% endblock %}
 {% block breadcrumb %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-wrench"></i> Configuration</li>
-    <li><i class="fa fa-cog"></i> iSCSI Settings</li>
+    <li><i class="fa fa-wrench"></i> 存储配置</li>
+    <li><i class="fa fa-cog"></i> 网络设置</li>
 </ol>
 {% endblock %}
-{% block content_header %}iSCSI Settings{% endblock %}
+{% block content_header %}网络设置{% endblock %}
 {% block content %}
 <section class="content">
     <form id="manage_network_config" method="post" action="{{ url_for('configuration_controller.save_network') }}">
@@ -52,7 +52,7 @@
                                 <div class="col-md-5">
                                     <!-- subnet mask 1 -->
                                     <div class="form-group">
-                                        <label id="lblIqn">IQN base prefix:<font color="red">*</font><i
+                                        <label id="lblIqn">IQN前缀:<font color="red">*</font><i
                                                 class=""></i></label>
 
                                         <div class="input-group">
@@ -71,7 +71,7 @@
 
 
                             <div class="box-header">
-                                <h3 class="box-title">iSCSI 1 Subnet</h3>
+                                <h3 class="box-title">块存储网段1</h3>
                             </div>
                             <div class="box-body">
 
@@ -79,7 +79,7 @@
                                     <div class="col-md-5">
                                         <!-- subnet mask 1 -->
                                         <div class="form-group">
-                                            <label id="lblSubnet1">Subnet Mask:<font color="red">*</font><i
+                                            <label id="lblSubnet1">子网掩码:<font color="red">*</font><i
                                                     class=""></i></label>
 
                                             <div class="input-group">
@@ -105,7 +105,7 @@
                                                        name="vlan" value="true" {% if form.Subnet1_Vlan_Id %} checked
                                                        {%endif%}>
                                                 &nbsp;&nbsp;
-                                                <label id="lblvlan1" style="font-weight: normal; vertical-align: -70%">VLAN Tagging</label>
+                                                <label id="lblvlan1" style="font-weight: normal; vertical-align: -70%">虚拟网络标签</label>
 
                                             </div>
 
@@ -119,7 +119,7 @@
                                              {%if not form.Subnet1_Vlan_Id %} style="display: none"
                                         {% else %}style="display: block"{%endif%}>
 
-                                        <label id="lblvlan1id">VLAN ID:<font color="red">*</font><i
+                                        <label id="lblvlan1id">虚拟网络ID:<font color="red">*</font><i
                                                 class=""></i></label>
 
                                         <div class="input-group">
@@ -141,7 +141,7 @@
                                 <div class="col-md-5">
                                     <!-- path1 subnet  mask 1 -->
                                     <div class="form-group">
-                                        <label id="lblFromSubnet1">Auto IP Range: <i class="">From:</i> <font
+                                        <label id="lblFromSubnet1">自动IP范围:<i class="">从:</i> <font
                                                 color="red">*</font></label>
 
                                         <div class="input-group">
@@ -163,7 +163,7 @@
 
                                     <!-- path2 subnet  mask 1 -->
                                     <div class="form-group">
-                                        <label id="lblToSubnet1"><i class="">To:</i> <font color="red">*</font></label>
+                                        <label id="lblToSubnet1"><i class="">到:</i> <font color="red">*</font></label>
 
                                         <div class="input-group">
                                             <div class="input-group-addon">
@@ -188,7 +188,7 @@
 
 
                         <div class="box-header">
-                            <h3 class="box-title">iSCSI 2 Subnet </h3>
+                            <h3 class="box-title">块存储网段2</h3>
                         </div>
                         <div class="box-body">
 
@@ -196,7 +196,7 @@
                                 <div class="col-md-5">
                                     <!-- subnet mask 1 -->
                                     <div class="form-group">
-                                        <label id="lblSubnet2">Subnet Mask:<font color="red">*</font><i
+                                        <label id="lblSubnet2">子网掩码:<font color="red">*</font><i
                                                 class=""></i></label>
 
                                         <div class="input-group">
@@ -222,7 +222,7 @@
                                                    name="vlan" value="vlan" {% if form.Subnet2_Vlan_Id%} checked
                                                    {%endif%}>
                                             &nbsp;&nbsp;
-                                            <label id="lblvlan2" style="font-weight: normal; vertical-align: -70%">VLAN Tagging</label>
+                                            <label id="lblvlan2" style="font-weight: normal; vertical-align: -70%">虚拟网络标签</label>
 
                                         </div>
 
@@ -234,7 +234,7 @@
                                     <div id="vlan2" class="form-group"
                                          {% if not form.Subnet2_Vlan_Id %} style="display: none"
                                     {% else %}style="display: block"{%endif%}>
-                                    <label id="lblvlan2id">VLAN ID:<font color="red">*</font><i
+                                    <label id="lblvlan2id">虚拟网络ID:<font color="red">*</font><i
                                             class=""></i></label>
 
                                     <div class="input-group">
@@ -256,7 +256,7 @@
                             <div class="col-md-5">
                                 <!-- path1 subnet  mask 1 -->
                                 <div class="form-group">
-                                    <label id="lblFromSubnet2">Auto IP Range: <i class="">From:</i> <font
+                                    <label id="lblFromSubnet2">自动IP范围: <i class="">从:</i> <font
                                             color="red">*</font></label>
 
                                     <div class="input-group">
@@ -278,7 +278,7 @@
 
                                 <!-- path2 subnet  mask 1 -->
                                 <div class="form-group">
-                                    <label id="lblToSubnet2"><i class="">To:</i> <font
+                                    <label id="lblToSubnet2"><i class="">到:</i> <font
                                             color="red">*</font></label>
 
                                     <div class="input-group">
@@ -306,9 +306,9 @@
             </div>
             <div class="box-footer">
 
-                <button type="submit" class="btn btn-primary pull-right">Save</button>
+                <button type="submit" class="btn btn-primary pull-right">保存</button>
                 <button type="reset" style="margin-right: 10px" class="btn btn-default pull-right"
-                        id="cancelBtn">Cancel
+                        id="cancelBtn">取消
                 </button>
             </div>
         </div>

@@ -23,14 +23,14 @@
 {% block breadcrumb %}
 
 <ol class="breadcrumb">
-    <li><i class="fa fa-clone"></i> Replication</li>
-    <li><i class="fa fa-calendar"></i><a href="/replication/job_list">&nbsp; Jobs </a></li>
-    <li><i class="fa fa-plus"></i> Add Job</li>
+    <li><i class="fa fa-clone"></i> 远程复制</li>
+    <li><i class="fa fa-calendar"></i><a href="/replication/job_list">&nbsp; 复制任务</a></li>
+    <li><i class="fa fa-plus"></i> 新建任务</li>
 </ol>
 {% endblock %}
 
 
-{% block content_header%} Add Replication Job{% endblock %}
+{% block content_header%}新建复制任务{% endblock %}
 {% block content %}
 
 
@@ -55,7 +55,7 @@
                                         <div class=" col-md-6">
                                             <div class="form-group">
 
-                                                <label id="lblJobName" for="job_name" class="control-label"> Name:<font
+                                                <label id="lblJobName" for="job_name" class="control-label"> 名称:<font
                                                         color="red">*</font></label>
                                                 <input id="job_name" type="text" name="job_name"
                                                        class="form-control" autocomplete="off">
@@ -70,7 +70,7 @@
                                     <div class="row">
                                         <div class=" col-md-6">
                                             <div class="form-group">
-                                                <label id="lblUseNode" for="backup_node" class="control-label">Use Node:<font
+                                                <label id="lblUseNode" for="backup_node" class="control-label">节点:<font
                                                         color="red">*</font></label>
 
                                                 <select id="backup_node" name="backup_node" class="form-control">
@@ -90,7 +90,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label id="lblSchedule" class="control-label">Schedule:<font
+                                        <label id="lblSchedule" class="control-label">计划:<font
                                                 color="red">*</font></label>
 
                                         <div class="row">
@@ -135,7 +135,7 @@
 
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label class="control-label">Source Cluster Name:</label>
+                                                    <label class="control-label">源集群名:</label>
                                                     {% if cluster_name %}
                                                     <input name="source_cluster" type="text" class="form-control"
                                                            value="{{ cluster_name }}"
@@ -146,8 +146,8 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label id="lblSourceDisk" class="control-label">Source
-                                                        Disk:<font
+                                                    <label id="lblSourceDisk" class="control-label">源盘
+                                                        :<font
                                                                 color="red">*</font></label>
 
                                                     <div class="row">
@@ -202,8 +202,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label id="lblDestinationName" for="dest_cluster_name"
-                                                           class="control-label">Destination Cluster
-                                                        Name:<font
+                                                           class="control-label">目的集群名:<font
                                                                 color="red">*</font></label>
 
 
@@ -231,7 +230,7 @@
 
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label id="lblIDestinationDisk" class="control-label">Destination Disk:<font
+                                                    <label id="lblIDestinationDisk" class="control-label">目的盘:<font
                                                                 color="red">*</font></label>
 
                                                     <div class="row">
@@ -290,7 +289,7 @@
                             <div class="row">
                                 <div class=" col-md-4">
                                     <div class="form-group">
-                                        <label id="lbl_Rep_Compression" class="control-label">Compression:</label>
+                                        <label id="lbl_Rep_Compression" class="control-label">压缩:</label>
 
                                         <!-- Enabled & Disabled -->
                                         <div class="row">
@@ -300,7 +299,7 @@
                                                         <input name="rep_compression_mode" value="enabled"
                                                                type="radio"
                                                                id="rep_enabled">
-                                                        &nbsp;Enabled
+                                                        &nbsp;启用
                                                     </label>
                                                 </div>
                                             </div>
@@ -311,7 +310,7 @@
                                                                type="radio"
                                                                checked="checked"
                                                                id="rep_disabled">
-                                                        &nbsp;Disabled
+                                                        &nbsp;禁用
                                                     </label>
                                                 </div>
                                             </div>
@@ -326,8 +325,7 @@
                             <div class="row">
                                 <div class=" col-md-3" id="Rep_CompressionAlg">
                                     <div class="form-group">
-                                        <label for="rep_compression_algorithm" class="control-label">Compression
-                                            Algorithm:<font
+                                        <label for="rep_compression_algorithm" class="control-label">压缩算法:<font
                                                     color="red">*</font></label>
 
                                         <select id="rep_compression_algorithm" name="rep_compression_algorithm"
@@ -355,12 +353,12 @@
                                     </div>
                                     <h4 class="box-title" id="box_details_title"
                                         style="font-weight: 700; font-size: 14px;">
-                                        Advanced
+                                        高级
                                     </h4>
                                 </div>
                                 <div id="demo" class="box-body collapse">
                                     <div class="form-group">
-                                        <label>Pre Snapshot Script URL:
+                                        <label>预快照脚本URL:
                                             <i data-toggle="tooltip"
                                                title='{{ gettext("ui_admin_pre_snap_script_label_tooltip") }}'
                                                class="fa fa-fw fa-info-circle"></i></label>
@@ -369,7 +367,7 @@
                                                class="form-control" autocomplete="off">
                                     </div>
                                     <div class="form-group">
-                                        <label>Post Snapshot Script URL:
+                                        <label>发布快照脚本URL:
                                             <i data-toggle="tooltip"
                                                title='{{ gettext("ui_admin_post_snap_script_label_tooltip") }}'
                                                class="fa fa-fw fa-info-circle"></i></label>
@@ -377,7 +375,7 @@
                                                class="form-control" autocomplete="off">
                                     </div>
                                     <div class="form-group">
-                                        <label>Post Job Complete URL:
+                                        <label>任务完成 URL:
                                             <i data-toggle="tooltip"
                                                title='{{ gettext("ui_admin_post_job_complete_label_tooltip") }}'
                                                class="fa fa-fw fa-info-circle"></i></label>
@@ -397,11 +395,11 @@
                                 <div class="form-group">
                                     <div class="box-footer">
 
-                                        <button type="submit" class="btn btn-primary pull-right " value="submit">Save
+                                        <button type="submit" class="btn btn-primary pull-right " value="submit">保存
                                         </button>
 
                                         <button type="button" style="margin-right: 10px"
-                                                class="btn btn-default pull-right" id="cancelBtn" value="cancel">Cancel
+                                                class="btn btn-default pull-right" id="cancelBtn" value="cancel">取消
                                         </button>
                                     </div>
                                 </div>

@@ -100,20 +100,20 @@ function loadPoolStatus(deleted_pool) {
 
                 if (pool_name !=  deleted_pool ) {
 
-                    $('#status_' + pool_name).html("<span class='badge bg-stop'>Inactive</span>");
+                    $('#status_' + pool_name).html("<span class='badge bg-stop'>不活动的</span>");
 
                     for (var index in pools_list["actives"]) {
 
                         if (pool_name == pools_list["actives"][index]) {
 
-                            $('#status_' + pool_name).html("<span class='badge bg-started'>Active</span>");
+                            $('#status_' + pool_name).html("<span class='badge bg-started'>活动的</span>");
                             break;
                         }
                     }
 
                 }
                 else {
-                    $('#status_' + pool_name).html("<span class='badge bg-pending'>Deleting</span>");
+                    $('#status_' + pool_name).html("<span class='badge bg-pending'>删除中</span>");
                 }
 
 

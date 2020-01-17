@@ -27,12 +27,12 @@
 {% block title %}<title> Add EC Profile </title>{% endblock %}
 {% block breadcrumb %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-wrench"></i> Configuration </li>
-    <li><i class="fa fa-file"></i> <a href="/configuration/ec_profiles">EC Profiles </a></li>
-    <li><i class="fa fa-file"></i> Add EC Profile</li>
+    <li><i class="fa fa-wrench"></i> 存储配置 </li>
+    <li><i class="fa fa-file"></i> <a href="/configuration/ec_profiles">纠删码规则 </a></li>
+    <li><i class="fa fa-file"></i> 添加纠删码规则</li>
 </ol>
 {% endblock %}
-{% block content_header %} Add EC Profile {% endblock %}
+{% block content_header %} 添加纠删码规则 {% endblock %}
 {% block content %}
 
 <style>
@@ -53,7 +53,7 @@
                             <div class="row">
                                 <div class=" col-md-5">
                                     <div class="form-group">
-                                        <label id="label_name" class="control-label">Name:<font
+                                        <label id="label_name" class="control-label">名称:<font
                                                 color="red">*</font></label>
 
                                         <input id="name" type="text" name="profile_name"
@@ -65,7 +65,7 @@
                             <div class="row">
                                 <div class=" col-md-5">
                                     <div class="form-group">
-                                        <label id="label_k" class="control-label">K:<font
+                                        <label id="label_k" class="control-label">原始数据盘数量:<font
                                                 color="red">*</font></label><i data-toggle="tooltip" data-placement="right"
                                                title='{{ gettext("ui_admin_ec_profile_k_explanation") }}'
                                                class="fa fa-fw fa-info-circle"></i>
@@ -79,7 +79,7 @@
                             <div class="row">
                                 <div class=" col-md-5">
                                     <div class="form-group">
-                                        <label id="label_m" class="control-label">M:<font
+                                        <label id="label_m" class="control-label">校验盘数量:<font
                                                 color="red">*</font></label><i data-toggle="tooltip" data-placement="right"
                                                title='{{ gettext("ui_admin_ec_profile_m_explanation") }}'
                                                class="fa fa-fw fa-info-circle"></i>
@@ -96,7 +96,7 @@
                                 <div class="form-group">
                                     <div class="col-md-5">
                                         <a href="#" class="btn btn-xs" onclick="onChangeAdvancedCheckbox(this);"><i style="color: black" class="glyphicon glyphicon-plus"></i></a>
-                                        <label class="form-check-label"> Advanced</label>
+                                        <label class="form-check-label"> 高级</label>
                                     </div>
                                 </div>
 
@@ -106,7 +106,7 @@
                             <div class="row"  id="plugin_div">
                                 <div class=" col-md-5">
                                     <div class="form-group">
-                                        <label id="label_plugin" class="control-label">Plugin:</label>
+                                        <label id="label_plugin" class="control-label">纠删码库:</label>
 
                                         <select id="plugin" name="plugin" class="form-control"  onchange="onChangePlugins(this);">
                                             <option value=""></option>
@@ -125,7 +125,7 @@
                             <div class="row" id="technique_div" hidden>
                                 <div class=" col-md-5">
                                     <div class="form-group">
-                                        <label id="label_technique" class="control-label">Technique:</label>
+                                        <label id="label_technique" class="control-label">算法:</label>
 
                                         <select id="technique" name="technique" class="form-control">
                                             <option value=""></option>
@@ -142,7 +142,7 @@
                             <div class="row"  id="stripe_unit_div">
                                 <div class=" col-md-5">
                                     <div class="form-group">
-                                        <label id="label_stripe_unit" class="control-label">Stripe unit:</label><i data-toggle="tooltip" data-placement="right"
+                                        <label id="label_stripe_unit" class="control-label">条带大小:</label><i data-toggle="tooltip" data-placement="right"
                                                title='{{ gettext("ui_admin_ec_profile_stripe_unit_explanation") }}'
                                                class="fa fa-fw fa-info-circle"></i>
                                         <input id="stripe_unit" type="text" name="stripe_unit"
@@ -157,7 +157,7 @@
                             <div class="row"  id="packet_size_div" hidden>
                                 <div class=" col-md-5">
                                     <div class="form-group">
-                                        <label id="label_packet_size" class="control-label">Packet Size:</label>
+                                        <label id="label_packet_size" class="control-label">数据包大小:</label>
 
                                         <input id="packet_size" type="text" name="packet_size"
                                                class="form-control" autocomplete="off">
@@ -172,7 +172,7 @@
                             <div class="row"  id="locality_div" hidden>
                                 <div class=" col-md-5">
                                     <div class="form-group">
-                                        <label id="label_locality" class="control-label">Locality:<font
+                                        <label id="label_locality" class="control-label">局部校验分组数量:<font
                                                 color="red">*</font></label>
 
                                         <input id="locality" type="text" name="locality"
@@ -188,7 +188,7 @@
                             <div class="row" id="durability_estimator_div" hidden>
                                 <div class=" col-md-5">
                                     <div class="form-group">
-                                        <label id="label_durability_estimator" class="control-label">Durability Estimator:<font
+                                        <label id="label_durability_estimator" class="control-label">持久性估计，允许损失OSD数量:<font
                                                 color="red">*</font></label>
 
                                         <input id="durability_estimator" type="text" name="durability_estimator"
@@ -208,11 +208,11 @@
                                 <div class="form-group">
                                     <div class="box-footer">
 
-                                        <button type="submit" class="btn btn-primary pull-right " value="submit">Save
+                                        <button type="submit" class="btn btn-primary pull-right " value="submit">保存
                                         </button>
 
                                         <button type="button" style="margin-right: 10px"
-                                                class="btn btn-default pull-right" id="cancelBtn" value="cancel">Cancel
+                                                class="btn btn-default pull-right" id="cancelBtn" value="cancel">取消
                                         </button>
                                     </div>
                                 </div>

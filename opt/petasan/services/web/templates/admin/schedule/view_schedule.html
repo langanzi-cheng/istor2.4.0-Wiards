@@ -23,7 +23,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true"> X </span>
             </button>
-            <h4 class="modal-title">Schedule</h4>
+            <h4 class="modal-title">时间表</h4>
         </div>
         <!--  Modal Body  -->
         <!-- ============ -->
@@ -35,15 +35,15 @@
                     <div class="col-md-4">
                         <div class="form-group" id="daily_radio" >
                             <label class="radio-inline"><input type="radio" name="schedule_type" id="daily"
-                                   onchange="onChangeDailyForm('daily_at_val');" value="daily">Daily</label>
+                                   onchange="onChangeDailyForm('daily_at_val');" value="daily">以日为周期</label>
                         </div>
                         <div class="form-group" id="weekly_radio">
                             <label class="radio-inline"><input type="radio" name="schedule_type" id="weekly"
-                                   onchange="onChangeWeeklyForm('weekly_at_val');" value="weekly">Weekly</label>
+                                   onchange="onChangeWeeklyForm('weekly_at_val');" value="weekly">以周为周期</label>
                         </div>
                         <div class="form-group" id="monthly_radio">
                             <label class="radio-inline"><input type="radio" name="schedule_type" id="monthly"
-                                   onchange="onChangeMonthlyForm('monthly_at_val')" value="monthly">Monthly</label>
+                                   onchange="onChangeMonthlyForm('monthly_at_val')" value="monthly">以月为周期</label>
                         </div>
                     </div>
 
@@ -52,7 +52,7 @@
                         <div id="daily_form" hidden>
                             <div class="form-group">
                                 <label class="radio-inline"><input type="radio" name="daily_type" id="daily_at" value="daily_at"
-                                       onchange="enabelAndDisableAtVals(name,'daily_at','daily_at_val')" >At:</label>
+                                       onchange="enabelAndDisableAtVals(name,'daily_at','daily_at_val')" >时间:</label>
                                     <select id="daily_at_val" disabled>
                                         <option value="none"></option>
                                     </select>
@@ -60,7 +60,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="radio-inline"><input type="radio" name="daily_type" id="daily_every" value="daily_every"
-                                       onchange="enabelAndDisableVals(name,'daily_every','daily_every_val_hour', 'daily_every_val_minute', 'daily_every_type');" >Every:
+                                       onchange="enabelAndDisableVals(name,'daily_every','daily_every_val_hour', 'daily_every_val_minute', 'daily_every_type');" >每隔:
                                     <select id="daily_every_val_hour" disabled>
                                         <option value="none"></option>
                                         <option value="1">1</option>
@@ -77,34 +77,34 @@
                                         <option value="45">45</option>
                                     </select>
                                     <select id="daily_every_type" disabled onchange="onChangeDailyEveryType();">
-                                        <option value="hours">Hours</option>
-                                        <option value="minutes">Minutes</option>
+                                        <option value="hours">小时</option>
+                                        <option value="minutes">分钟</option>
                                     </select>
                                 </label>
                             </div>
                         </div>
                         <div id="weekly_form" hidden>
                             <div class="form-group">
-                                <label style="font-weight: normal !important;">On:&nbsp;&nbsp;</label><input type="checkbox" name="saturday" id="6" value="6" style="">&nbsp;Saturday
-                                &nbsp;&nbsp;&nbsp;<label class="radio-inline">At:</label>
+                                <label style="font-weight: normal !important;">在:&nbsp;&nbsp;</label><input type="checkbox" name="saturday" id="6" value="6" style="">&nbsp;星期六
+                                &nbsp;&nbsp;&nbsp;<label class="radio-inline">时间:</label>
                                     <select id="weekly_at_val">
                                         <option value="none"></option>
                                     </select><br>
-                                <input type="checkbox" name="sunday" id="0" value="0" style="margin-left: 10%">&nbsp;Sunday<br>
-                                <input type="checkbox" name="monday" id="1" value="1" style="margin-left: 10%">&nbsp;Monday<br>
-                                <input type="checkbox" name="tuesday" id="2" value="2" style="margin-left: 10%">&nbsp;Tuesday<br>
-                                <input type="checkbox" name="wednesday" id="3" value="3" style="margin-left: 10%">&nbsp;Wednesday<br>
-                                <input type="checkbox" name="thursday" id="4" value="4" style="margin-left: 10%">&nbsp;Thursday<br>
-                                <input type="checkbox" name="friday" id="5" value="5" style="margin-left: 10%">&nbsp;Friday
+                                <input type="checkbox" name="sunday" id="0" value="0" style="margin-left: 10%">&nbsp;星期天<br>
+                                <input type="checkbox" name="monday" id="1" value="1" style="margin-left: 10%">&nbsp;星期一<br>
+                                <input type="checkbox" name="tuesday" id="2" value="2" style="margin-left: 10%">&nbsp;星期二<br>
+                                <input type="checkbox" name="wednesday" id="3" value="3" style="margin-left: 10%">&nbsp;星期三<br>
+                                <input type="checkbox" name="thursday" id="4" value="4" style="margin-left: 10%">&nbsp;星期四<br>
+                                <input type="checkbox" name="friday" id="5" value="5" style="margin-left: 10%">&nbsp;星期五
                             </div>
                         </div>
 
                         <div id="monthly_form" hidden>
                             <div class="form-group">
                                 <label class="radio-inline"><input type="radio" name="monthly_days_check" id="monthly_on_days_check" value="monthly_on_days_check"
-                                                        onchange="enabelAndDisableVal(name,'monthly_on_days_check','monthly_days', 'first_day_of_month')">On Day:</label>
+                                                        onchange="enabelAndDisableVal(name,'monthly_on_days_check','monthly_days', 'first_day_of_month')">日期:</label>
                                 <input type="text" id="monthly_days" placeholder="1,15" size="13" disabled>
-                                &nbsp;<label class="radio-inline">At:</label>
+                                &nbsp;<label class="radio-inline">时间:</label>
                                     <select id="monthly_at_val" >
                                         <option value="none"></option>
                                     </select>
@@ -112,16 +112,16 @@
                             </div>
                             <div class="form-group">
                                 <label class="radio-inline"><input type="radio" name="monthly_days_check" id="monthly_first" value="monthly_first"
-                                       onchange="enabelAndDisableVal(name,'monthly_first','first_day_of_month', 'monthly_days')" >First:
+                                       onchange="enabelAndDisableVal(name,'monthly_first','first_day_of_month', 'monthly_days')" >第一个:
                                     <select id="first_day_of_month" disabled>
                                         <option value="none"></option>
-                                        <option value="1">Monday</option>
-                                        <option value="2">Tuesday</option>
-                                        <option value="3">Wednesday</option>
-                                        <option value="4">Thursday</option>
-                                        <option value="5">Friday</option>
-                                        <option value="6">Saturday</option>
-                                        <option value="0">Sunday</option>
+                                        <option value="1">星期一</option>
+                                        <option value="2">星期二</option>
+                                        <option value="3">星期三</option>
+                                        <option value="4">星期四</option>
+                                        <option value="5">星期五</option>
+                                        <option value="6">星期六</option>
+                                        <option value="0">星期天</option>
                                     </select>
                                 </label>
                             </div>
@@ -135,10 +135,10 @@
 
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" onclick="cancelSchedule();" data-dismiss="modal">
-                Cancel
+                取消
             </button>
             <button type="button" id="submit_schedule_btn" onclick="submitSchedule();" class="btn btn-secondary">
-                Ok
+                确定
             </button>
 
         </div>

@@ -24,13 +24,13 @@
 {% block breadcrumb %}
 
 <ol class="breadcrumb">
-    <li><i class="fa fa-ambulance"></i>&nbsp;&nbsp;Maintenance </li>
-    <li><i class="fa fa-car"></i>&nbsp;&nbsp;Backfill Speed </li>
+    <li><i class="fa fa-ambulance"></i>&nbsp;&nbsp;维护</li>
+    <li><i class="fa fa-car"></i>&nbsp;&nbsp;回填速度 </li>
 </ol>
 {% endblock %}
 
 
-{% block content_header%} Backfill Speed {% endblock %}
+{% block content_header%} 回填速度{% endblock %}
 {% block content %}
 
 <section class="content">
@@ -51,7 +51,7 @@
                                 <div class="form-group">
                                     <div class="col-md-7">
                                         <div class="form-group">
-                                            <label for="backfillSpeeds" id="backfillSpeeds_lbl">Set Backfill Speed:<font
+                                            <label for="backfillSpeeds" id="backfillSpeeds_lbl">设置回填速度:<font
                                                     color="red">*</font>
                                                 <i data-toggle="tooltip"
                                                    title='{{ gettext("ui_admin_set_backfill_tooltip_msg") }}'
@@ -66,11 +66,11 @@
                                         <div class="row">
                                             <div class="col-md-5">
                                                 <select id="backfillSpeeds" name="backfillSpeeds" size="5" width="320" style="width: 320px">
-                                                    <option style="height:30px;padding-top: 6px;padding-left: 5px;" value="1">Very Slow</option>
-                                                    <option style="height:30px;padding-top: 6px;padding-left: 5px;" value="2">Slow</option>
-                                                    <option style="height:30px;padding-top: 6px;padding-left: 5px;" value="3">Medium</option>
-                                                    <option style="height:30px;padding-top: 6px;padding-left: 5px;" value="4">Fast</option>
-                                                    <option style="height:30px;padding-top: 6px;padding-left: 5px;" value="5">Very Fast</option>
+                                                    <option style="height:30px;padding-top: 6px;padding-left: 5px;" value="1">极慢</option>
+                                                    <option style="height:30px;padding-top: 6px;padding-left: 5px;" value="2">慢</option>
+                                                    <option style="height:30px;padding-top: 6px;padding-left: 5px;" value="3">一般</option>
+                                                    <option style="height:30px;padding-top: 6px;padding-left: 5px;" value="4">快</option>
+                                                    <option style="height:30px;padding-top: 6px;padding-left: 5px;" value="5">极快</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -85,7 +85,7 @@
                                         <div class="form-group">
                                             <div class="box-footer">
                                                 <button type="submit" class="btn btn-primary pull-right "
-                                                        value="submit">Set
+                                                        value="submit">设置
                                                 </button>
                                                 <!--
                                                 <button type="button" style="margin-right: 10px"

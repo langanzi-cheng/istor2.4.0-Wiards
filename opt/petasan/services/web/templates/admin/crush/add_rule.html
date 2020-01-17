@@ -28,13 +28,13 @@
 {% block title %}<title> Add Rule </title>{% endblock %}
 {% block breadcrumb %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-wrench"></i> Configuration </li>
-    <li><i class="fa fa-map"></i> CRUSH </li>
-    <li><i class="fa fa-book"></i> <a  href="/crush/rules">Rules</a> </li>
-    <li><i class="fa fa-book"></i> Add Rule</li>
+    <li><i class="fa fa-wrench"></i> 存储配置 </li>
+    <li><i class="fa fa-map"></i> 数据分布策略 </li>
+    <li><i class="fa fa-book"></i> <a  href="/crush/rules">规则</a> </li>
+    <li><i class="fa fa-book"></i> 新建规则</li>
 </ol>
 {% endblock %}
-{% block content_header %}Add Rule {% endblock %}
+{% block content_header %}新建规则 {% endblock %}
 {% block content %}
 
 
@@ -53,7 +53,7 @@
                             <!--use ready template div -->
                             <div class="col-md-7">
                                 <div class="form-group">
-                                    <label for="name">Use Template:</label>
+                                    <label for="name">模板:</label>
                                     {% if ruleTempList %}
 
 
@@ -76,7 +76,7 @@
                            <!-- Rule Name -->
                             <div class=" col-md-7">
                                 <div class="form-group">
-                                    <label for="ruleName" id="ruleName_lbl" class="control-label">Rule Name:<font color="red">*</font></label>
+                                    <label for="ruleName" id="ruleName_lbl" class="control-label">规则名:<font color="red">*</font></label>
                                     <input id="ruleName" type="text" name="rule_name"  class="form-control">
 
                                 </div>
@@ -84,7 +84,7 @@
 
                             <div class="col-md-7">
                                 <div class="form-group">
-                                    <label for="ruleData" id="ruleData_lbl">Rule:<font color="red">*</font> </label>
+                                    <label for="ruleData" id="ruleData_lbl">规则:<font color="red">*</font> </label>
                                     <textarea id="ruleData" rows="10" name="rule_body"
                                               class="form-control"></textarea>
                                 </div>
@@ -94,10 +94,10 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <div class="box-footer">
-                                        <button type="submit" class="btn btn-primary pull-right " value="submit">Save
+                                        <button type="submit" class="btn btn-primary pull-right " value="submit">保存
                                         </button>
                                         <button type="button" style="margin-right: 10px"
-                                                class="btn btn-default pull-right" id="cancelBtn" value="cancel">Cancel
+                                                class="btn btn-default pull-right" id="cancelBtn" value="cancel">取消
                                         </button>
                                     </div>
                                 </div>

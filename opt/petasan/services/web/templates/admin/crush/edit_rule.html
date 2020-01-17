@@ -28,13 +28,13 @@
 {% block title %}<title> Edit Rule </title>{% endblock %}
 {% block breadcrumb %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-wrench"></i> Configuration </li>
-    <li><i class="fa fa-map"></i> CRUSH </li>
-    <li><i class="fa fa-book"></i> <a  href="/crush/rules">Rules</a> </li>
-    <li><i class="fa fa-book"></i> Edit Rule</li>
+    <li><i class="fa fa-wrench"></i> 存储配置 </li>
+    <li><i class="fa fa-map"></i> 数据分布策略 </li>
+    <li><i class="fa fa-book"></i> <a  href="/crush/rules">规则</a> </li>
+    <li><i class="fa fa-book"></i> 编辑规则</li>
 </ol>
 {% endblock %}
-{% block content_header %} Edit Rule {% endblock %}
+{% block content_header %} 编辑规则 {% endblock %}
 {% block content %}
 
 
@@ -54,7 +54,7 @@
                            <!-- Rule Name -->
                             <div class=" col-md-7">
                                 <div class="form-group">
-                                    <label class="control-label"> Rule Name:&nbsp;&nbsp;&nbsp;</label>
+                                    <label class="control-label">规则名:&nbsp;&nbsp;&nbsp;</label>
                                     <p>{{rule_name}}</p>
                                     <input type="hidden" name="rule_name" value="{{rule_name}}">
                                     <input type="hidden" name="rule_id" value="{{rule_id}}">
@@ -66,7 +66,7 @@
 
                             <div class="col-md-7" >
                                 <div class="form-group">
-                                    <label for="ruleData" id="ruleData_lbl">Rule:<font color="red">*</font> </label>
+                                    <label for="ruleData" id="ruleData_lbl">规则:<font color="red">*</font> </label>
                                     <textarea id="ruleData" rows="10" name="rule_body"
                                               class="form-control" {%if rule_id == 0 %}readonly{% endif %}>{{selected_rule_info}}</textarea>
                                 </div>
@@ -76,10 +76,10 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <div class="box-footer">
-                                        <button type="submit" class="btn btn-primary pull-right " value="submit" {%if rule_id == 0 %}disabled{% endif %} >Save
+                                        <button type="submit" class="btn btn-primary pull-right " value="submit" {%if rule_id == 0 %}disabled{% endif %} >保存
                                         </button>
                                         <button type="button" style="margin-right: 10px"
-                                                class="btn btn-default pull-right" id="cancelBtn" value="cancel">Cancel
+                                                class="btn btn-default pull-right" id="cancelBtn" value="cancel">取消
                                         </button>
                                     </div>
                                 </div>

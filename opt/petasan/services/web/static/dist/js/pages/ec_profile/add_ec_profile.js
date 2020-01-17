@@ -118,7 +118,7 @@ function showHideTagsArray(tags_array , action){
 
 function removeErrorClass(){
         $('#packet_size').closest('.form-group').removeClass('has-error');
-        $("#label_packet_size").text("Packet Size:");
+        $("#label_packet_size").text("数据包大小:");
         $('#locality').closest('.form-group').removeClass('has-error');
         $("#label_locality").text("Locality:").append("<font color='red'>*</font>");
         $('#durability_estimator').closest('.form-group').removeClass('has-error');
@@ -209,7 +209,7 @@ $("#ec_profile_form").submit(function (event){
         event.preventDefault();
     }else{
         packet_size_input.closest('.form-group').removeClass('has-error');
-        $("#label_packet_size").text("Packet Size:");
+        $("#label_packet_size").text("数据包大小:");
     }
 
         var locality_val = $('#locality').val();

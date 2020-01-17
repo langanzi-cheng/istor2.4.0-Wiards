@@ -22,12 +22,12 @@
 {% block title %}<title>Physical Disk List</title>{% endblock %}
 {% block breadcrumb %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-bars"></i> Manage Nodes</li>
-    <li><i class="fa fa-object-group"></i> <a href="{{ url_for('node_controller.node_list') }}"> Nodes List</a></li>
-    <li><i class="fa fa-database"></i> Physical Disk List</li>
+    <li><i class="fa fa-bars"></i> 节点管理</li>
+    <li><i class="fa fa-object-group"></i> <a href="{{ url_for('node_controller.node_list') }}"> 节点列表</a></li>
+    <li><i class="fa fa-database"></i>物理盘列表</li>
 </ol>
 {% endblock %}
-{% block content_header %}{{ nodeName }} Physical Disk List{% endblock %}
+{% block content_header %}{{ nodeName }} 物理盘列表{% endblock %}
 {% block content %}
 <section class="content">
     <div class="row">
@@ -39,18 +39,18 @@
                     <table id="diskList" class="table table-bordered table-striped table-align-mid ">
                         <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Size</th>
+                            <th>名词</th>
+                            <th>容量</th>
                             <!--<th>Type</th>-->
-                            <th>SSD</th>
+                            <th>固态硬盘</th>
                             <!--<th>Vendor</th>-->
                             <!--<th>Model</th>-->
-                            <th>Serial</th>
-                            <th>SMART Test</th>
-                            <th>Usage</th>
-                            <th>Status</th>
-                            <th>Linked Devices</th>
-                            <th style="width: 12%">Action</th>
+                            <th>序列号</th>
+                            <th>SMART 检测</th>
+                            <th>用途</th>
+                            <th>状态</th>
+                            <th>关联设备</th>
+                            <th style="width: 12%">操作</th>
 
                         </tr>
                         </thead>

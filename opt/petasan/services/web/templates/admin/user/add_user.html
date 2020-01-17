@@ -24,12 +24,12 @@
 {% block title %}<title>Add User</title>{% endblock %}
 {% block breadcrumb %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-user"></i> Manage User</li>
-    <li><i class="fa fa-users"></i><a href="/user/list">&nbsp;User List</a></li>
-    <li><i class="fa fa-user-plus"></i> Add User</li>
+    <li><i class="fa fa-user"></i> 用户管理</li>
+    <li><i class="fa fa-users"></i><a href="/user/list">&nbsp;用户列表</a></li>
+    <li><i class="fa fa-user-plus"></i> 新建用户</li>
 </ol>
 {% endblock %}
-{% block content_header %}Add User{% endblock %}
+{% block content_header %}新建用户{% endblock %}
 {% block content %}
 <section class="content">
     <form id="add_user_form" method="post" action="{{ url_for('user_controller.save_user') }}">
@@ -42,14 +42,14 @@
                             <div class="col-md-6">
                                 <!-- name -->
                                 <div class="form-group">
-                                    <label id="lblName"><i class=""></i>Name:<font color="red">*</font></label>
+                                    <label id="lblName"><i class=""></i>名称:<font color="red">*</font></label>
                                     <input class="form-control" maxlength="50" type="text"
                                            id="name" autocomplete="off"
                                            name="name" value="{{ form.name }}">
                                 </div>
 
                                 <div class="form-group">
-                                    <label id="lblUserName"><i class=""></i>Username:<font color="red">*</font></label>
+                                    <label id="lblUserName"><i class=""></i>用户名:<font color="red">*</font></label>
                                     <input class="form-control" maxlength="50" type="text"
                                            id="userName" autocomplete="off"
                                            name="userName" value="{{ form.UserName }}">
@@ -58,14 +58,14 @@
                         <!-- password -->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label id="lblPassword"><i class=""></i>Password:<font color="red">*</font></label>
+                                    <label id="lblPassword"><i class=""></i>密码:<font color="red">*</font></label>
                                     <input class="form-control" maxlength="50" type="password"
                                            id="userPassword" autocomplete="off"
                                            name="userPassword" value="{{ form.Password }}">
                                 </div>
                                 <!-- confirm password -->
                                 <div class="form-group">
-                                    <label id="lblConfirmPassword"><i class=""></i>Confirm Password:<font
+                                    <label id="lblConfirmPassword"><i class=""></i>确认密码:<font
                                             color="red">*</font></label>
                                     <input class="form-control" maxlength="50" type="password"
                                            id="confirmPassword" autocomplete="off"
@@ -78,7 +78,7 @@
                         <!-- Role -->
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label id="lblRole"><i class=""></i> Role:</label>
+                                    <label id="lblRole"><i class=""></i> 角色:</label>
                                     <select class="form-control" name="role" id="role">
                                         {% for r in roles %}
                                         <option value="{{ r.id }}">{{ r.name }}</option>
@@ -102,14 +102,13 @@
                                 <div class="form-group">
                                     <input style="position: absolute; margin-top: 15px;" class="icheckbox_minimal-blue"
                                            type="checkbox" name="notify_mail" id="notify_mail" value="Notify">
-                                    <label style="padding-left:20px; margin-top: 15px;" for="notify_mail"> Receive
-                                        Notifications </label><br>
+                                    <label style="padding-left:20px; margin-top: 15px;" for="notify_mail"> 接收通知 </label><br>
                                 </div>
                             </div>
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary pull-right" value="submit">Save</button>
+                            <button type="submit" class="btn btn-primary pull-right" value="submit">保存</button>
                             <button type="button" style="margin-right: 10px" class="btn btn-default pull-right"
-                                    id="cancelBtn" value="cancel">Cancel
+                                    id="cancelBtn" value="cancel">取消
                             </button>
                         </div>
                     </div>

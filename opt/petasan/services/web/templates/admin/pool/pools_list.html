@@ -26,14 +26,14 @@
 {% block breadcrumb %}
 
 <ol class="breadcrumb">
-    <li><i class="fa fa-wrench"></i> Configuration</li>
-    <li><i class="fa fa-database"></i> Pools</li>
+    <li><i class="fa fa-wrench"></i> 存储配置</li>
+    <li><i class="fa fa-database"></i> 存储池</li>
 </ol>
 {% endblock %}
 
 <!-- *************************************************************************************************************** -->
 
-{% block content_header%} Pools{% endblock %}
+{% block content_header%} 存储池{% endblock %}
 {% block content %}
 
 <!-- New --><!-- Style added for the linkable rows in the table -->
@@ -84,7 +84,7 @@
                         <form method="POST" action="{{ url_for('pool_controller.add_pool') }}" id="add_pool">
                             <button type="submit" class="btn btn-primary">
                                 <i class="glyphicon glyphicon-plus"></i>
-                                Add Pool
+                               新建存储池
                             </button>
                         </form>
                     </div>
@@ -104,17 +104,17 @@
                             <!-- ------------ -->
                             <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Type</th>
-                                <th>No of PGs</th>
-                                <th>Size</th>
-                                <th>Min Size</th>
-                                <th>Compression</th>
-                                <th>Compression Algorithm</th>
-                                <th>Rule Name</th>
-                                <th>Active OSDs</th>
-                                <th>Status</th>
-                                <th>Action</th>
+                                <th>名称</th>
+                                <th>类型</th>
+                                <th>PG数</th>
+                                <th>容量</th>
+                                <th>最小容量</th>
+                                <th>压缩</th>
+                                <th>压缩算法</th>
+                                <th>规则名称</th>
+                                <th>活动的OSD</th>
+                                <th>状态</th>
+                                <th>操作</th>
                             </tr>
                             </thead>
 
@@ -218,13 +218,13 @@
 
                                     {% if (delete_job_id > 0 and pool_name==item.name) %}
                                     <!-- if a pool is being deleted -->
-                                    <span class="badge bg-pending">Deleting</span>
+                                    <span class="badge bg-pending">删除中</span>
 
                                     {% else %}
                                     {%if item.name in active_pool_list %}
-                                    <span class='badge bg-started'>Active</span>
+                                    <span class='badge bg-started'>活动的</span>
                                     {%else%}
-                                    <span class='badge bg-stop'>Inactive</span>
+                                    <span class='badge bg-stop'>不活动的</span>
                                     {%endif%}
 
                                     {% endif %}
@@ -235,16 +235,16 @@
 
                                     {% if (delete_job_id > 0 and pool_name==item.name) %}
                                     <!-- if a pool is being deleted -->
-                                    <span class="badge bg-pending">Deleting</span>
+                                    <span class="badge bg-pending">删除中</span>
                                     {% else %}
-                                    <span class='badge bg-stop'>Inactive</span>
+                                    <span class='badge bg-stop'>不活动的</span>
                                     {% endif %}
 
                                     <!-- Waiting for active pools -->
                                     <!-- ------------------------ -->
                                     {% else %}
 
-                                    <span class="badge bg-pending">Checking</span>
+                                    <span class="badge bg-pending">检查中</span>
 
                                     {% endif %}
 
@@ -254,7 +254,7 @@
                                 <!-- Display Edit and Delete Buttons -->
                                 <!-- ------------------------------- -->
                                 <td>
-                                    <div title="Edit Pool" class="btn-group">
+                                    <div title="编辑存储池" class="btn-group">
 
                                         <!-- Button " Edit " -->
                                         <form method="POST"
@@ -269,7 +269,7 @@
 
                                     </div>
 
-                                    <div title="Delete Pool" class="btn-group">
+                                    <div title="删除存储池" class="btn-group">
 
                                         <!-- Button " Delete " -->
                                         <form action="{{ url_for('pool_controller.remove_pool',pool_name = item.name ,pool_type = item.type) }}"

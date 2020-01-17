@@ -38,15 +38,15 @@ function load_active_jobs_list(){
             var body = '<table id="activeJobsList" class="table table-bordered table-striped table-align-mid nowrap" style="table-layout: fixed">'+
                         '<thead>'+
                             '<tr>'+
-                                '<th style="vertical-align:middle">Id</th>'+
-                                '<th style="vertical-align:middle">Name</th>'+
-                                '<th style="vertical-align:middle">Start Time</th>'+
-                                '<th style="vertical-align:middle">Elapsed Time</th>'+
-                                '<th style="vertical-align:middle">Transfer Rate</th>'+
-                                '<th style="vertical-align:middle">Transferred</th>'+
-                                '<th style="vertical-align:middle">Compression</th>'+
-                                '<th style="vertical-align:middle">Progress</th>'+
-                                '<th style="vertical-align:middle">Actions</th>'+
+                                '<th style="vertical-align:middle">任务Id</th>'+
+                                '<th style="vertical-align:middle">名称</th>'+
+                                '<th style="vertical-align:middle">开始时间</th>'+
+                                '<th style="vertical-align:middle">经过时间</th>'+
+                                '<th style="vertical-align:middle">转移率</th>'+
+                                '<th style="vertical-align:middle">转入</th>'+
+                                '<th style="vertical-align:middle">压缩</th>'+
+                                '<th style="vertical-align:middle">进展</th>'+
+                                '<th style="vertical-align:middle">动作</th>'+
                             '</tr>'+
                         '</thead>'+'<tbody id="activeJobsListBody">';
 
@@ -63,7 +63,7 @@ function load_active_jobs_list(){
                     body = body + '<td>' + jobs[job].compression_ratio + '</td>';
                     body = body + '<td>' + jobs[job].progress + '</td>';
                     body = body + '<td>'+
-                        '<div title="Cancel Job" class="btn-group ">'+
+                        '<div title="任务取消" class="btn-group ">'+
                         '<form action="" id='+jobs[job].job_id+' method="post">'+
                         '<button type="submit" class="btn btn-default" id='+jobs[job].job_id+'#'+jobs[job].job_name+' onclick="return doDeleteActiveJob(id);" >'+
                         '<i class="fa fa-remove"></i></button></form></div></td>';
@@ -90,15 +90,15 @@ function load_active_jobs_list(){
             var body = '<table id="activeJobsList" class="table table-bordered table-striped table-align-mid nowrap" style="table-layout: fixed">'+
                         '<thead>'+
                             '<tr>'+
-                                '<th style="vertical-align:middle">Id</th>'+
-                                '<th style="vertical-align:middle">Name</th>'+
-                                '<th style="vertical-align:middle">Start Time</th>'+
-                                '<th style="vertical-align:middle">Elapsed Time</th>'+
-                                '<th style="vertical-align:middle">Transfer Rate</th>'+
-                                '<th style="vertical-align:middle">Transferred</th>'+
-                                '<th style="vertical-align:middle">Compression</th>'+
-                                '<th style="vertical-align:middle">Progress</th>'+
-                                '<th style="vertical-align:middle">Actions</th>'+
+                                '<th style="vertical-align:middle">任务Id</th>'+
+                                '<th style="vertical-align:middle">名称</th>'+
+                                '<th style="vertical-align:middle">开始时间</th>'+
+                                '<th style="vertical-align:middle">经历时间</th>'+
+                                '<th style="vertical-align:middle">转移率</th>'+
+                                '<th style="vertical-align:middle">转入</th>'+
+                                '<th style="vertical-align:middle">压缩</th>'+
+                                '<th style="vertical-align:middle">进展</th>'+
+                                '<th style="vertical-align:middle">操作</th>'+
                             '</tr>'+
                         '</thead>'+'<tbody id="activeJobsListBody">';
             isAjaxDone = true;

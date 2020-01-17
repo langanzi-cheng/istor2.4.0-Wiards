@@ -57,12 +57,12 @@
 {% block title%}<title>Edit iSCSI Disk</title>{% endblock %}
 {% block breadcrumb %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-server"></i> Manage iSCSI Disks</li>
-     <li><i class="fa fa-list"> </i> <a href="{{ url_for('disk_controller.disk_list') }}"> iSCSI Disks</a> </li>
-    <li><i class="fa fa-hdd-o"></i> Edit iSCSI Disk</li>
+    <li><i class="fa fa-server"></i> 块存储管理</li>
+     <li><i class="fa fa-list"> </i> <a href="{{ url_for('disk_controller.disk_list') }}"> iSCSI盘</a> </li>
+    <li><i class="fa fa-hdd-o"></i> 编辑iSCSI盘</li>
 </ol>
 {% endblock %}
-{% block content_header%}Edit iSCSI Disk{% endblock %}
+{% block content_header%}编辑iSCSI盘{% endblock %}
 {% block content %}
 <section class="content">
     <form id="edit_task_form" method="post" action="{{ url_for('disk_controller.update_disk', disk_id =disk.id , pool = disk.pool) }}">
@@ -81,7 +81,7 @@
 
                             <!--disk name -->
                             <div class="form-group">
-                                <label id="lblDiskName"><i class=""></i>Disk Name:<font color="red">*</font></label>
+                                <label id="lblDiskName"><i class=""></i>名称:<font color="red">*</font></label>
                                 <input type="text" class="form-control" id="diskName" name="diskName"
                                        value="{{disk.disk_name}}">
                             </div>
@@ -99,7 +99,7 @@
                                     </div>
                                     <div class="col-lg-3">
 
-                                        <label id="lblDiskSize" class="control-label" for="diskSizeVal">Size:</label>
+                                        <label id="lblDiskSize" class="control-label" for="diskSizeVal">容量:</label>
                                         <input type="hidden" id="DiskValUnit">
 
                                         <div class="input-group">
@@ -113,16 +113,16 @@
 
 
                             <div class="form-group">
-                                <div><label>Pool Type:</label></div>
+                                <div><label>存储池类型:</label></div>
 
                                     <div class="col-md-3">
                                         <label class="radio-inline"><input type="radio" {% if disk.data_pool is not none %} {% if disk.data_pool|length == 0 %} checked {% endif %} {% endif %}
-                                                          name="pool_type" id="replicated" value="replicated">Replicated</label>
+                                                          name="pool_type" id="replicated" value="replicated">副本</label>
                                     </div>
 
                                 <div class="col-md-9">
                                     <label class="radio-inline"><input type="radio" {% if disk.data_pool is not none %} {% if disk.data_pool|length > 0 %} checked {% endif %} {% endif %}
-                                        name="pool_type" id="erasure"  value="erasure">EC</label>
+                                        name="pool_type" id="erasure"  value="erasure">纠删码</label>
                                 </div>
 
                             </div><div class="row form-group"></div>
@@ -134,7 +134,7 @@
                             <div class="form-group">
 
                             <div class="col-md-4" aria-disabled="true">
-                                <label id="pool">Pool:</label>
+                                <label id="pool">存储池:</label>
 
                                 <div class="input-group" style="width:100%;">
                                     <select class="form-control" id="pool_name" name="pool_name" disabled>
@@ -153,7 +153,7 @@
                                         </div>
                             </div>
                             <div class="col-md-4" aria-disabled="true">
-                                <label>Data Pool:</label>
+                                <label>数据池:</label>
 
                                 <div class="input-group"  style="width:100%;">
                                     <select class="form-control" id="data_pool_name" name="data_pool_name" disabled>
@@ -173,7 +173,7 @@
                             <div class="row form-group"></div>
                             {% if paths_iscsi_1 %}
                                 <div class="form-group">
-                                    <label>iSCSI Subnet 1:<i class=""></i></label>
+                                    <label>iSCSI子网1:<i class=""></i></label>
 
                                     <div class="input-group">
                                         {% for path in paths_iscsi_1 %}
@@ -187,7 +187,7 @@
                             {% endif %}
                             {% if paths_iscsi_2 %}
                                 <div class="form-group">
-                                    <label>iSCSI Subnet 2:<i class=""></i></label>
+                                    <label>iSCSI子网2:<i class=""></i></label>
 
                                     <div class="input-group">
                                         {% for path in paths_iscsi_2 %}
@@ -205,14 +205,14 @@
                         <div class="col-md-6">
 
                             <div class="form-group">
-                                <label id="lblAuth"><i class=""></i>Password Authentication:</label>
+                                <label id="lblAuth"><i class=""></i>密码验证:</label>
 
                                 <div class="form-group">
                                     <div class="col-md-2">
                                         <div class="radio">
                                             <label>
                                                 <input name="orpAuth" id="orpAuthYes" value="Yes" {% if disk.user %} checked {% endif %} type="radio">
-                                                Yes
+                                                是
                                             </label>
                                         </div>
                                     </div>
@@ -220,7 +220,7 @@
                                         <div class="radio">
                                             <label>
                                                 <input name="orpAuth" id="orpAuthNo" value="No" {% if disk.user=="" %} checked {% endif %} type="radio">
-                                                No
+                                                否
                                             </label>
                                         </div>
                                     </div>
@@ -232,7 +232,7 @@
 
                             <!--user name -->
                             <div class="form-group" id="divUserName">
-                                <label class="control-label" id="lblUserName" for="UserNameVal">User Name:<font
+                                <label class="control-label" id="lblUserName" for="UserNameVal">用户名:<font
                                         color="red">*</font></label>
                                 <input name="UserName" class="form-control" autocomplete="off" id="UserNameVal"
                                        type="text" value="{{disk.user}}">
@@ -240,14 +240,14 @@
 
                             <!--password-->
                             <div class="form-group" id="divPassword">
-                                <label for="PasswordVal" id="lblPass">Password:<font color="red">*</font><i
+                                <label for="PasswordVal" id="lblPass">密码:<font color="red">*</font><i
                                         class=""></i></label>
                                 <input name="Password" class="form-control" autocomplete="off" id="PasswordVal"
                                        type="password" value="{{disk.password}}">
                             </div>
                             <!--confirm password -->
                             <div class="form-group" id="divConfirmPassword">
-                                <label for="ConfirmPasswordVal" id="lblConfirmPass">Confirm Password:<font
+                                <label for="ConfirmPasswordVal" id="lblConfirmPass">密码确认:<font
                                         color="red">*</font><i
                                         class=""></i></label>
                                 <input class="form-control" id="ConfirmPasswordVal" autocomplete="off" type="password"
@@ -256,7 +256,7 @@
 
 
                             <div class="form-group">
-                                <label id="lblACL"><i class=""></i> Client ACL:</label>
+                                <label id="lblACL"><i class=""></i> 访问控制列表:</label>
 
                                 <div class="form-group">
                                     <div class="col-md-2">
@@ -265,7 +265,7 @@
                                                 <input name="orpACL" id="orpAclAll" value="All"
                                                        {% if disk.acl=="" %} checked {% endif %}
                                                        type="radio">
-                                                All
+                                                所有
                                             </label>
                                         </div>
                                     </div>
@@ -288,7 +288,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label><i class=""></i> Enable Replication:</label><i data-toggle="tooltip" data-placement="right"
+                                <label><i class=""></i>启用复制:</label><i data-toggle="tooltip" data-placement="right"
                                                title='{{ gettext("ui_admin_enable_replication_explanation") }}'
                                                class="fa fa-fw fa-info-circle"></i>
 
@@ -298,7 +298,7 @@
                                             <label>
                                                 <input name="replication" id="rep_yes" value="yes" {% if disk.is_replication_target == True %} checked {% endif %}
                                                        type="radio">
-                                                Yes
+                                                是
                                             </label>
                                         </div>
                                     </div>
@@ -306,7 +306,7 @@
                                         <div class="radio">
                                             <label>
                                                 <input name="replication" id="rep_no" value="no" {% if disk.is_replication_target == False %} checked {% endif %}
-                                                       type="radio">No
+                                                       type="radio">否
                                             </label>
                                         </div>
                                     </div>
@@ -333,8 +333,8 @@
 
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary pull-right" value="submit">Save</button>
-                        <button type="button" style="margin-right: 10px" class="btn btn-default pull-right"  id="cancelBtn"  value="cancel">Cancel</button>
+                        <button type="submit" class="btn btn-primary pull-right" value="submit">保存</button>
+                        <button type="button" style="margin-right: 10px" class="btn btn-default pull-right"  id="cancelBtn"  value="cancel">取消</button>
                     </div>
                 </div>
                 <!-- /.box -->

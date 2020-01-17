@@ -23,7 +23,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true"> X </span>
             </button>
-            <h4 class="modal-title">Replication Job Information</h4>
+            <h4 class="modal-title">复制任务信息</h4>
         </div>
 
         <!--  Modal Body  -->
@@ -37,7 +37,7 @@
 
                     <p id="loading" name='loading' class="text-muted">
 
-                    <h3 class="box-title">Loading</h3>
+                    <h3 class="box-title">载入中</h3>
                     </p>
 
                 </div>
@@ -46,12 +46,12 @@
                     <div class="col-sm-6">
 
                         <div class="" id="job_info_id">
-                            <label> Name: </label>
+                            <label> 名称: </label>
 
                             <p id='job_name'></p>
                         </div>
                         <div id="src_node_info_Name">
-                            <label> Used Node: </label>
+                            <label> 使用节点: </label>
 
                             <p id='node_name'></p>
                         </div>
@@ -59,22 +59,22 @@
                         <!--<label> Source: </label>-->
                         <!--</div>-->
                         <div id="src_cluster_info">
-                            <label> Source Cluster Name: </label>
+                            <label> 源集群名: </label>
 
                             <p id='source_cluster_name'></p>
                         </div>
                         <div id="iscsi_disk_info">
-                            <label> Source Disk: </label>
+                            <label>源盘: </label>
 
                             <p id='source_disk_id'></p>
                         </div>
                         <div id="compression_info">
-                            <label> Compression: </label>
+                            <label> 压缩: </label>
 
                             <p id='compression'></p>
                         </div>
                         <div id="compression_algorithm_info">
-                            <label> Compression Algorithm: </label>
+                            <label> 压缩算法: </label>
 
                             <p id='compression_algorithm'></p>
                         </div>
@@ -89,12 +89,12 @@
                                 </div>
                                 <h4 class="box-title" id="box_details_title"
                                     style="font-weight: 700; font-size: 14px;">
-                                    Advanced
+                                    高级
                                 </h4>
                             </div>
                             <div id="demo" class="box-body collapse">
                                 <div class="form-group">
-                                    <label>Pre Snapshot Script URL:
+                                    <label>预快照脚本 URL:
                                         <i data-toggle="tooltip"
                                            title='{{ gettext("ui_admin_pre_snap_script_label_tooltip") }}'
                                            class="fa fa-fw fa-info-circle"></i></label>
@@ -104,7 +104,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Post Snapshot Script URL:
+                                    <label>发布快照脚本 URL:
                                         <i data-toggle="tooltip"
                                            title='{{ gettext("ui_admin_post_snap_script_label_tooltip") }}'
                                            class="fa fa-fw fa-info-circle"></i></label>
@@ -115,7 +115,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Post Job Complete URL:
+                                    <label>任务完成 URL:
                                         <i data-toggle="tooltip"
                                            title='{{ gettext("ui_admin_post_job_complete_label_tooltip") }}'
                                            class="fa fa-fw fa-info-circle"></i></label>
@@ -137,7 +137,7 @@
                         <!--<pre style='background-color: white' id='schedule' ></pre>-->
                         <!--</div>-->
 
-                        <label id="lblSchedule" class="control-label">Schedule:</label>
+                        <label id="lblSchedule" class="control-label">计划:</label>
 
                         <div class="row">
                             <div class="col-md-12">
@@ -153,14 +153,14 @@
                         <!--</div>-->
 
                         <div class="form-group">
-                            <label>Destination Cluster Name:</label>
+                            <label>目的集群名称:</label>
 
                             <p id="destination_cluster_name"></p>
                         </div>
 
 
                         <div class="form-group">
-                            <label>Destination Disk:</label>
+                            <label>目的盘:</label>
 
                             <p id="destination_disk_id"></p>
                         </div>
@@ -177,7 +177,7 @@
 
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                Close
+                关闭
             </button>
         </div>
 

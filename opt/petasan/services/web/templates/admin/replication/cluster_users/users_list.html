@@ -24,13 +24,13 @@
 {% block breadcrumb %}
 
 <ol class="breadcrumb">
-    <li><i class="fa fa-clone"></i> Replication </li>
-    <li><i class="fa fa-child"></i> Users</li>
+    <li><i class="fa fa-clone"></i> 远程复制 </li>
+    <li><i class="fa fa-child"></i> 源用户</li>
 </ol>
 {% endblock %}
 
 
-{% block content_header%} Replication Users{% endblock %}
+{% block content_header%} 复制源用户{% endblock %}
 {% block content %}
 
 <style>
@@ -68,7 +68,7 @@
                         <form method="POST" action="{{ url_for('replication_users_controller.add_rep_usr') }}" id="add_replication_user">
                             <button type="submit" class="btn btn-primary">
                                 <i class="glyphicon glyphicon-plus"></i>
-                                Add Replication User
+                                新建源用户
                             </button>
                         </form>
                     </div>
@@ -81,8 +81,8 @@
 
                             <thead>
                             <tr>
-                                <th style="width: 75%">Name</th>
-                                <th style="width: 25%">Action</th>
+                                <th style="width: 75%">名称</th>
+                                <th style="width: 25%">操作</th>
                             </tr>
                             </thead>
 
@@ -100,7 +100,7 @@
                                 </td>
 
                                 <td>
-                                    <div title="Edit User" class="btn-group">
+                                    <div title="编辑用户" class="btn-group">
 
                                         <form method="POST"
                                               action="{{ url_for('replication_users_controller.edit_user',name = user_name) }}"
@@ -112,7 +112,7 @@
 
                                     </div>
 
-                                    <div title="Delete user" class="btn-group">
+                                    <div title="删除用户" class="btn-group">
 
                                         <form action="{{ url_for('replication_users_controller.remove_user',name = user_name) }}"
                                               method="POST" id="delete_user_form">

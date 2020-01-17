@@ -23,7 +23,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true"> X </span>
             </button>
-            <h4 class="modal-title">iSCSI Disk Information</h4>
+            <h4 class="modal-title">iSCSI盘信息</h4>
         </div>
 
         <!--  Modal Body  -->
@@ -35,7 +35,7 @@
 
                     <img src="/static/dist/img/credit/loading.gif" style="height: 50px; width: 50px;">
                     <p id="loading" name='loading' class="text-muted">
-                        <h3 class="box-title">Loading</h3>
+                        <h3 class="box-title">载入中</h3>
                     </p>
 
                 </div>
@@ -44,27 +44,27 @@
                     <div class="col-sm-6" >
 
                     <div class="" id="disk_info_id">
-                        <label> Disk ID: </label>
+                        <label>盘号: </label>
                         <p id='disk_id'></p>
                     </div>
                         <div id="disk_info_Name">
-                        <label> Disk Name: </label>
+                        <label> 名称: </label>
                         <p id='disk_name'></p>
                     </div>
                     <div id="disk_info_size">
-                        <label> Disk Size: </label>
+                        <label> 容量: </label>
                         <p id='disk_size'></p>
                     </div>
                     <div id="disk_info_created">
-                        <label> Created: </label>
+                        <label> 创建时间: </label>
                         <p id='disk_created'></p>
                     </div>
                     <div id="disk_info_pool_type">
-                        <label> Pool Type: </label>
+                        <label> 存储池类型: </label>
                         <p id='disk_pool_type'></p>
                     </div>
                     <div id="disk_info_pool">
-                        <label> Pool: </label>
+                        <label>存储池: </label>
                         <p id='disk_pool'></p><p id='disk_data_pool'></p>
                     </div>
                     <div id="disk_info_iqn">
@@ -72,10 +72,10 @@
                         <p id='disk_iqn'></p>
                     </div>
                    <div id="iscsi1" hidden>
-                        <label>iSCSI Subnet 1:<i class=""></i></label>
+                        <label>iSCSI 子网 1:<i class=""></i></label>
                    </div>
                    <div id="iscsi2" hidden>
-                        <label>iSCSI Subnet 2:<i class=""></i></label>
+                        <label>iSCSI 子网 2:<i class=""></i></label>
                    </div>
 
 
@@ -83,17 +83,17 @@
 
                     <div class="col-sm-6">
                         <div class="form-group" id="password_auth">
-                                <label id="lblAuth"><i class=""></i>Password Authentication:</label>
+                                <label id="lblAuth"><i class=""></i>密码验证:</label>
                                 <p id="password_status"></p>
                         </div>
 
                                 <div class="form-group" id="auth_yes" hidden>
-                                <label class="control-label" id="lblUserName">User Name:</label>
+                                <label class="control-label" id="lblUserName">用户名:</label>
                                 <p id="username"></p>
                                 </div>
 
                                 <div class="form-group">
-                                <label id="lblACL"><i class=""></i> Client ACL:</label><p id="acl_status"></p>
+                                <label id="lblACL"><i class=""></i>访问控制列表:</label><p id="acl_status"></p>
                                 </div>
 
 
@@ -102,7 +102,7 @@
                                     <label><i class=""></i> IQN(s)</label>
                                 </div>
                         <div class="form-group" id="enable_replication">
-                                <label id="lblReplica"><i class=""></i>Enable Replication:</label>
+                                <label id="lblReplica"><i class=""></i>是否启用复制:</label>
                                 <p id="replica_status"></p>
                         </div>
 
@@ -119,7 +119,7 @@
 
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                Close
+               关闭
             </button>
         </div>
 

@@ -28,7 +28,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true"> X </span>
                             </button>
-                            <h4 class="modal-title"> Add Storage Device </h4>
+                            <h4 class="modal-title"> 添加存储设备 </h4>
                         </div>
 
                         <!--  Modal Body  -->
@@ -43,7 +43,7 @@
 
                                     <p id="loading" name='loading' class="text-muted">
 
-                                    <h3 class="box-title"> Loading </h3>
+                                    <h3 class="box-title">载入中...</h3>
                                     </p>
 
                                 </div>
@@ -59,7 +59,7 @@
                                     <div class="row" id="physical_disk_div" style="margin-bottom: 5px">
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label for="physical_disk" id="lbl_physical_disk" class="control-label">Physical Disk:</label>
+                                                <label for="physical_disk" id="lbl_physical_disk" class="control-label">物理盘:</label>
                                                 <input class="form-control" id="physical_disk" type="text" name="physical_disk" autocomplete="off" readonly>
                                             </div>
                                         </div>
@@ -70,7 +70,7 @@
                                     <div class="row" id="add_as_div" style="margin-bottom: 5px">
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label for="add_as" id="lbl_add_as" class="control-label">Add As:</label>
+                                                <label for="add_as" id="lbl_add_as" class="control-label">存储类型:</label>
                                                 <select class="form-control" id="add_as" name="add_as" onchange="viewDiskOption(this);">
                                                      <option value="cache">Cache</option>
                                                      <option value="journal">Journal</option>
@@ -86,10 +86,10 @@
 
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label for="external_journal" id="lbl_external_journal" class="control-label">External Journal:</label>
+                                                <label for="external_journal" id="lbl_external_journal" class="control-label">是否启用journal:</label>
                                                 <select class="form-control" id="external_journal" name="external_journal" onchange="showJournalDisks(this);">
-                                                     <option value="disabled" selected>Disabled</option>
-                                                     <option value="enabled">Enabled</option>
+                                                     <option value="disabled" selected>禁用</option>
+                                                     <option value="enabled">启用</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -98,9 +98,9 @@
 
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label for="journal_disk_name" id="journal_disk_lbl" class="control-label" style="display: none">Journal Disk:</label>
+                                                <label for="journal_disk_name" id="journal_disk_lbl" class="control-label" style="display: none">journal盘:</label>
                                                 <select class="form-control" id="journal_disk_name" name="journal_disk_name" style="display: none">
-                                                    <option value="auto" selected>Auto</option>
+                                                    <option value="auto" selected>自动</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -113,9 +113,9 @@
 
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label for="external_cache" id="lbl_external_cache" class="control-label">External Cache:</label>
+                                                <label for="external_cache" id="lbl_external_cache" class="control-label">是否启用Cache:</label>
                                                 <select class="form-control" id="external_cache" name="external_cache" onchange="showCacheDisks(this);">
-                                                     <option value="disabled" selected>Disabled</option>
+                                                     <option value="disabled" selected>禁用</option>
                                                      <option value="writecache">Write Cache</option>
                                                 </select>
                                             </div>
@@ -125,9 +125,9 @@
 
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label for="cache_disk_name" id="cache_disk_lbl" class="control-label" style="display: none">Cache Disk:</label>
+                                                <label for="cache_disk_name" id="cache_disk_lbl" class="control-label" style="display: none">Cache盘:</label>
                                                 <select class="form-control" id="cache_disk_name" name="cache_disk_name" style="display: none">
-                                                     <option value="auto" selected>Auto</option>
+                                                     <option value="auto" selected>自动</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -155,7 +155,7 @@
                                     <div class="row" id="role_setting_info_message_cache_ram_div">
                                         <div class="col-md-11">
                                             <div class="form-group">
-                                                <h5>Notes:</h5>
+                                                <h5>注意事项:</h5>
                                                 <ul>
                                                   <li><h5 id="message_ssd_type">{{ gettext("ui__node_role_setting_ssd_type_msg") }}</h5></li>
                                                   <li><h5 id="message_cache_ram">{{ gettext("ui_deploy_node_role_setting_info_message_cache_ram") }}</h5></li>
@@ -175,11 +175,11 @@
                         <!-- ============ -->
                         <div class="modal-footer">
                              <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                Close
+                                关闭
                             </button>
 
                             <button type="submit" class="btn btn-primary pull-right" value="submit" id="add">
-                                Add
+                                添加
                             </button>
                         </div>
 

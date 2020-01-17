@@ -89,17 +89,17 @@ function draw_buckets_tree(buckets_types) {
                                 // new //
                                 if (node.type != buckets_types[2] && node.name != "default") {
                                     $li.find('.jqtree-element').append(
-                                        '<a type="button" id="delete_node_button" style="margin-left: 4px;z-index: 50;" data-tooltip="Delete Bucket" data-tooltip-position="right" class="pull-right btn btn-danger btn-xs" name=' + node_children + "##" + node_name + "##" + node_id + ' onclick="removeNode(name);"  > <span class="glyphicon glyphicon-remove"></span> </a>'
+                                        '<a type="button" id="delete_node_button" style="margin-left: 4px;z-index: 50;" data-tooltip="删除分布域" data-tooltip-position="right" class="pull-right btn btn-danger btn-xs" name=' + node_children + "##" + node_name + "##" + node_id + ' onclick="removeNode(name);"  > <span class="glyphicon glyphicon-remove"></span> </a>'
                                         +
-                                        '<a type="button" style="z-index: 50;" data-toggle="modal" data-tooltip="Add Bucket" data-tooltip-position="left" class="pull-right btn btn-primary btn-xs" name=' + node_type + "##" + node_hash + "##" + node_alg + "##" + node_name + "##" + node_id + ' onclick="getSelectedNode(name);" data-target="#modal_add_node" ><span class="glyphicon glyphicon-plus"></span> </a>'
+                                        '<a type="button" style="z-index: 50;" data-toggle="modal" data-tooltip="新建分布域" data-tooltip-position="left" class="pull-right btn btn-primary btn-xs" name=' + node_type + "##" + node_hash + "##" + node_alg + "##" + node_name + "##" + node_id + ' onclick="getSelectedNode(name);" data-target="#modal_add_node" ><span class="glyphicon glyphicon-plus"></span> </a>'
                                     );
                                 }
                                 else {
                                     if(node.name == "default"){
-                                       $li.find('.jqtree-element').append( '<a type="button" style="margin-right: 28px; z-index: 50;" data-toggle="modal" data-tooltip="Add Bucket" data-tooltip-position="left" class="pull-right btn btn-primary btn-xs" name=' + node_type + "##" + node_hash + "##" + node_alg + "##" + node_name + "##" + node_id + ' onclick="getSelectedNode(name);" data-target="#modal_add_node" > <span class="glyphicon glyphicon-plus"></span> </a>')
+                                       $li.find('.jqtree-element').append( '<a type="button" style="margin-right: 28px; z-index: 50;" data-toggle="modal" data-tooltip="新建分布域" data-tooltip-position="left" class="pull-right btn btn-primary btn-xs" name=' + node_type + "##" + node_hash + "##" + node_alg + "##" + node_name + "##" + node_id + ' onclick="getSelectedNode(name);" data-target="#modal_add_node" > <span class="glyphicon glyphicon-plus"></span> </a>')
                                     }else{
                                         $li.find('.jqtree-element').append(
-                                        '<a type="button" id="delete_node_button" style="margin-left: 4px; z-index: 50;" data-tooltip="Delete Bucket" data-tooltip-position="right" class="pull-right btn btn-danger btn-xs" name=' + node_children + "##" + node_name + "##" + node_id + ' onclick="removeNode(name);"> <span class="glyphicon glyphicon-remove"></span> </a>'
+                                        '<a type="button" id="delete_node_button" style="margin-left: 4px; z-index: 50;" data-tooltip="删除分布域" data-tooltip-position="right" class="pull-right btn btn-danger btn-xs" name=' + node_children + "##" + node_name + "##" + node_id + ' onclick="removeNode(name);"> <span class="glyphicon glyphicon-remove"></span> </a>'
                                     );
                                     }
 
@@ -225,7 +225,7 @@ function addNode(event) {
     $('#node_id').val("");
 
     $("#name").closest('.form-group').removeClass('has-error');
-    $('#name_lbl').text('Name: ');
+    $('#name_lbl').text('名称: ');
     $('#name_lbl').append('<font color="red">*</font>');
 
 }
@@ -268,7 +268,7 @@ function removeNode(node_info) {
 
 function remove_class(){
     $("#name").closest('.form-group').removeClass('has-error');
-    $('#name_lbl').text('Name: ');
+    $('#name_lbl').text('名称: ');
     $('#name_lbl').append('<font color="red">*</font>');
 }
 

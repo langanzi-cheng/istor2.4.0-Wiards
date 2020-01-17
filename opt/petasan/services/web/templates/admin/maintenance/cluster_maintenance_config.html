@@ -19,11 +19,11 @@
 {% block title %}<title>Cluster Maintenance</title>{% endblock %}
 {% block breadcrumb %}
     <ol class="breadcrumb">
-        <li><i class="fa fa-ambulance"></i> Maintenance</li>
-        <li><i class="fa fa-plus-square"></i> Cluster Maintenance</li>
+        <li><i class="fa fa-ambulance"></i> 维护</li>
+        <li><i class="fa fa-plus-square"></i> 集群维护</li>
     </ol>
 {% endblock %}
-{% block content_header %} Cluster Maintenance {% endblock %}
+{% block content_header %} 集群维护 {% endblock %}
 
 {% block content %}
     <section class="content">
@@ -54,7 +54,7 @@
                                         <div class="col-md-12" style="margin-left: -5px;">
                                             <div class="form-group">
 
-                                                <label id="lbl_fencing">Fencing:
+                                                <label id="lbl_fencing">故障转移:
                                                     <i data-toggle="tooltip"
                                                        title='{{ gettext("ui_admin_cluster_maintenance_label_fencing") }}'
                                                        class="fa fa-fw fa-info-circle"></i>
@@ -70,7 +70,7 @@
                                                                        {% if maintenance_config_form .fencing==1 %}
                                                                        checked="checked"
                                                                        {% endif %}>
-                                                                on
+                                                                开
                                                             </label>
                                                         </div>
                                                     </div>
@@ -81,7 +81,7 @@
                                                                        {% if maintenance_config_form.fencing==0 %}
                                                                        checked="checked"
                                                                        {% endif %}>
-                                                                off
+                                                               关
                                                             </label>
                                                         </div>
                                                     </div>
@@ -96,7 +96,7 @@
                                     <!-- OSD Settings Section  -->
                                     <div class="row">
                                         <div class="box-header">
-                                            <h3 class="box-title">OSD Settings</h3>
+                                            <h3 class="box-title">OSD 设置</h3>
                                         </div>
                                         <div class="col-md-12">
 
@@ -105,7 +105,7 @@
 
                                                     <!--Osd Recover -->
                                                     <div class="form-group">
-                                                        <label id="lbl_osd_recover"> Recover:
+                                                        <label id="lbl_osd_recover"> 完全恢复:
                                                             <i data-toggle="tooltip"
                                                                title='{{ gettext("ui_admin_cluster_maintenance_label_osd_recover") }}'
                                                                class="fa fa-fw fa-info-circle"></i>
@@ -119,7 +119,7 @@
                                                                                {% if
                                                                                maintenance_config_form.osd_recover==1
                                                                                %} checked="checked" {% endif %}>
-                                                                        on
+                                                                        开
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -129,7 +129,7 @@
                                                                         <input name="osd_recover" value="0" type="radio"
                                                                                {% if
                                                                                maintenance_config_form.osd_recover==0
-                                                                               %} checked="checked" {% endif %}> off
+                                                                               %} checked="checked" {% endif %}> 关
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -140,7 +140,7 @@
 
                                                     <!-- Osd Rebalance -->
                                                     <div class="form-group">
-                                                        <label id="lbl_osd_rebalance"> Rebalance:
+                                                        <label id="lbl_osd_rebalance"> 重新均衡:
                                                             <i data-toggle="tooltip"
                                                                title='{{ gettext("ui_admin_cluster_maintenance_label_osd_rebalance") }}'
                                                                class="fa fa-fw fa-info-circle"></i>
@@ -156,7 +156,7 @@
                                                                                maintenance_config_form.osd_rebalance==1
                                                                                %}
                                                                                checked="checked" {% endif %}>
-                                                                        on
+                                                                        开
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -169,7 +169,7 @@
                                                                                maintenance_config_form.osd_rebalance==0
                                                                                %}
                                                                                checked="checked" {% endif %}>
-                                                                        off
+                                                                        关
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -180,7 +180,7 @@
 
                                                     <!--Osd Backfill -->
                                                     <div class="form-group">
-                                                        <label id="lbl_osd_backfill"> Backfill:
+                                                        <label id="lbl_osd_backfill"> 回填:
                                                             <i data-toggle="tooltip"
                                                                title='{{ gettext("ui_admin_cluster_maintenance_label_osd_backfill") }}'
                                                                class="fa fa-fw fa-info-circle"></i>
@@ -195,7 +195,7 @@
                                                                                {% if
                                                                                maintenance_config_form.osd_backfill==1
                                                                                %} checked="checked" {% endif %}>
-                                                                        on
+                                                                        开
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -207,7 +207,7 @@
                                                                                {% if
                                                                                maintenance_config_form.osd_backfill==0
                                                                                %} checked="checked" {% endif %}>
-                                                                        off
+                                                                        关
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -218,7 +218,7 @@
 
                                                     <!--Osd Mark Down -->
                                                     <div class="form-group">
-                                                        <label id="lbl_osd_mark_down">Mark Down:
+                                                        <label id="lbl_osd_mark_down">标记故障:
                                                             <i data-toggle="tooltip"
                                                                title='{{ gettext("ui_admin_cluster_maintenance_label_osd_mark_down") }}'
                                                                class="fa fa-fw fa-info-circle"></i>
@@ -233,7 +233,7 @@
                                                                                {% if
                                                                                maintenance_config_form.osd_mark_down==1
                                                                                %}
-                                                                               checked="checked" {% endif %}> on
+                                                                               checked="checked" {% endif %}> 开
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -245,7 +245,7 @@
                                                                                {% if
                                                                                maintenance_config_form.osd_mark_down==0
                                                                                %}
-                                                                               checked="checked" {% endif %}> off
+                                                                               checked="checked" {% endif %}>关
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -255,7 +255,7 @@
 
                                                     <!-- Osd Mark Out-->
                                                     <div class="form-group">
-                                                        <label id="lbl_osd_mark_out">Mark Out:
+                                                        <label id="lbl_osd_mark_out">标记剔除:
                                                             <i data-toggle="tooltip"
                                                                title='{{ gettext("ui_admin_cluster_maintenance_label_osd_mark_out") }}'
                                                                class="fa fa-fw fa-info-circle"></i>
@@ -270,7 +270,7 @@
                                                                                {% if
                                                                                maintenance_config_form.osd_mark_out==1
                                                                                %}
-                                                                               checked="checked" {% endif %}> on
+                                                                               checked="checked" {% endif %}> 开
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -282,7 +282,7 @@
                                                                                {% if
                                                                                maintenance_config_form.osd_mark_out==0
                                                                                %}
-                                                                               checked="checked" {% endif %}> off
+                                                                               checked="checked" {% endif %}> 关
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -292,7 +292,7 @@
 
                                                     <!-- Osd Scrub -->
                                                     <div class="form-group">
-                                                        <label id="lbl_osd_scrub">Scrub:
+                                                        <label id="lbl_osd_scrub">比对副本:
                                                             <i data-toggle="tooltip"
                                                                title='{{ gettext("ui_admin_cluster_maintenance_label_osd_scrub") }}'
                                                                class="fa fa-fw fa-info-circle"></i>
@@ -305,7 +305,7 @@
                                                                         <input name="osd_scrub" value="1" type="radio"
                                                                                {% if
                                                                                maintenance_config_form.osd_scrub==1 %}
-                                                                               checked="checked" {% endif %}> on
+                                                                               checked="checked" {% endif %}> 开
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -315,7 +315,7 @@
                                                                         <input name="osd_scrub" value="0" type="radio"
                                                                                {% if
                                                                                maintenance_config_form.osd_scrub==0 %}
-                                                                               checked="checked" {% endif %}> off
+                                                                               checked="checked" {% endif %}> 关
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -325,7 +325,7 @@
 
                                                     <!-- Osd Deep Scrub -->
                                                     <div class="form-group">
-                                                        <label id="lbl_osd_deep_scrub">Deep Scrub:
+                                                        <label id="lbl_osd_deep_scrub">深度比对:
                                                             <i data-toggle="tooltip"
                                                                title='{{ gettext("ui_admin_cluster_maintenance_label_osd_deep_scrub") }}'
                                                                class="fa fa-fw fa-info-circle"></i>
@@ -340,7 +340,7 @@
                                                                                {% if
                                                                                maintenance_config_form.osd_deep_scrub==1
                                                                                %}
-                                                                               checked="checked" {% endif %}> on
+                                                                               checked="checked" {% endif %}> 开
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -352,7 +352,7 @@
                                                                                {% if
                                                                                maintenance_config_form.osd_deep_scrub==0
                                                                                %}
-                                                                               checked="checked" {% endif %}> off
+                                                                               checked="checked" {% endif %}> 关
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -376,11 +376,11 @@
                     <div class="box-footer">
                         <button type="button" onclick="document.getElementById('Setting_form').submit();"
                                 class="btn btn-primary pull-right">
-                            Save
+                            保存
                         </button>
                         <a href="{{ url_for('main_controller.dashboard')}}" style="margin-right: 20px"
                            class="btn btn-default pull-right" id="cancelBtn">
-                            Cancel
+                           取消
                         </a>
                     </div> <!-- end footer -->
                 </div>

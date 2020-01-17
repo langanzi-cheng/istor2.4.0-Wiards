@@ -21,10 +21,10 @@ $(document).ready(function () {
     setInterval(getClusterStatus, 15000);
 
     $("[data-toggle='tooltip']").click(function () {
-        if ($(this).attr('data-original-title') == 'Collapse') {
-            $(this).attr('data-original-title', 'Expand');
+        if ($(this).attr('data-original-title') == '折叠') {
+            $(this).attr('data-original-title', '展开');
         } else {
-            $(this).attr('data-original-title', 'Collapse');
+            $(this).attr('data-original-title', '折叠');
         }
     });
 
@@ -70,11 +70,11 @@ function getClusterStatus() {
             // *Second data part is maintenance mode ON/OFF*
             if (data.split("##")[1] == 1) { //maintenance_mode = 'ON'
 
-                maintenance_mode = '<span class="text-red cluster-status">On</span>';
+                maintenance_mode = '<span class="text-red cluster-status">启用</span>';
 
             } else { //maintenance_mode = 'OFF'
 
-                maintenance_mode = '<span  class="text-green cluster-status" >Off</span>' +
+                maintenance_mode = '<span  class="text-green cluster-status" >关闭</span>' +
                     '';
             }
             $('#maintenance_status').empty()
@@ -131,23 +131,23 @@ function getClusterStatus() {
             });
             if (ceph_status_overall == 'HEALTH_OK') {
                 $("#ceph_health").empty();
-                $("#ceph_health").append('<span class="text-green cluster-status">OK <i class="fa fa-check text-green"></i></span>');
+                $("#ceph_health").append('<span class="text-green cluster-status">正常 <i class="fa fa-check text-green"></i></span>');
             } else if (ceph_status_overall == 'HEALTH_ERR') {
                 $("#ceph_health").empty();
 
                 $("#ceph_health").append("<a href='#' data-toggle='modal' data-target='#modal-default' onclick='return get_details();'> " +
-                    '<span class="text-red cluster-status" style="">Error <i  class="fa text-red fa-ban"></i></span>' +
+                    '<span class="text-red cluster-status" style="">错误 <i  class="fa text-red fa-ban"></i></span>' +
                     "</a>");
             } else if (ceph_status_overall == 'HEALTH_WARN' && ceph_status == 'HEALTH_WARN') {
                 $("#ceph_health").empty();
                 $("#ceph_health").append("<a href='#' data-toggle='modal' data-target='#modal-default' onclick='return get_details();'> " +
-                    '<span class="text-yellow cluster-status" >Warning <i class="fa text-yellow fa-warning"></i></span>' +
+                    '<span class="text-yellow cluster-status" >警告 <i class="fa text-yellow fa-warning"></i></span>' +
                     "</a>");
 
 
             } else if (ceph_status_overall == 'HEALTH_WARN' && ceph_status == 'HEALTH_OK') {
                 $("#ceph_health").empty();
-                $("#ceph_health").append('<span class="text-green cluster-status">OK <i class="fa fa-check text-green"></i></span>');
+                $("#ceph_health").append('<span class="text-green cluster-status">正常 <i class="fa fa-check text-green"></i></span>');
 
 
             }

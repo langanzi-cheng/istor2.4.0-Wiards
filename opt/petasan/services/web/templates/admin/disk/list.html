@@ -24,11 +24,11 @@
 {% block title %}<title>iSCSI Disks</title>{% endblock %}
 {% block breadcrumb %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-server"></i> Manage iSCSI Disks</li>
-    <li><i class="fa fa-list"></i> iSCSI Disks</li>
+    <li><i class="fa fa-server"></i> 块存储管理</li>
+    <li><i class="fa fa-list"></i> iSCSI盘</li>
 </ol>
 {% endblock %}
-{% block content_header %}iSCSI Disks{% endblock %}
+{% block content_header %}iSCSI盘{% endblock %}
 {% block content %}
 <style>
 
@@ -80,7 +80,7 @@
                         <form method="POST" action="{{ url_for('disk_controller.add_disk') }}" id="add_disk">
                             <button type="submit" class="btn btn-primary">
                                 <i class="glyphicon glyphicon-plus"></i>
-                                Add iSCSI Disk
+                                添加iSCSI盘
                             </button>
                         </form>
                     </div>
@@ -97,21 +97,21 @@
                         <thead>
                         <tr>
                             <th></th>
-                            <th>Disk Id</th>
-                            <th>Size</th>
-                            <th>Name</th>
-                            <th>Created</th>
-                            <th>Pool</th>
+                            <th>盘号</th>
+                            <th>容量</th>
+                            <th>名称</th>
+                            <th>创建日期</th>
+                            <th>存储池</th>
                             <th>IQN</th>
-                            <th>Active Paths</th>
+                            <th>活动路径</th>
                             {#
-                            <th>Path 1</th>
+                            <th>路径1</th>
                             #}
                             {#
-                            <th>Path 2</th>
+                            <th>路径 2</th>
                             #}
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>状态</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -180,7 +180,7 @@
                                                 <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                     <span aria-hidden="true">X</span></button>
-                                                <h4 class="modal-title">Active Paths</h4>
+                                                <h4 class="modal-title">活动路径</h4>
                                             </div>
 
 
@@ -193,7 +193,7 @@
 
                                                     <p id="loading" name='loading' class="text-muted">
 
-                                                    <h3 class="box-title">Loading</h3>  </p>
+                                                    <h3 class="box-title">载入中</h3>  </p>
                                                 </div>
 
                                                 <table class="table table-bordered table-striped"
@@ -209,7 +209,7 @@
 
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default pull-right"
-                                                        data-dismiss="modal">Close
+                                                        data-dismiss="modal">关闭
                                                 </button>
 
                                             </div>
@@ -227,24 +227,24 @@
                             #}
                             <td id="statusID_{{ disk.id }}">
                                 {% if disk.status == diskStatus.deleting %}
-                                <span class="badge bg-pending">Deleting</span>
+                                <span class="badge bg-pending">删除中</span>
                                 {% elif disk.status == diskStatus.started %}
-                                <span class="badge bg-started">Started</span>
+                                <span class="badge bg-started">已启动</span>
                                 {% elif disk.status == diskStatus.stopped %}
-                                <span class="badge bg-stop">Stopped</span>
+                                <span class="badge bg-stop">已停止</span>
                                 {% elif disk.status == diskStatus.unattached %}
-                                <span class="badge bg-unAttached">Detached</span>
+                                <span class="badge bg-unAttached">已分离</span>
                                 {% elif disk.status == diskStatus.stopping %}
-                                <span class="badge bg-pending">Stopping</span>
+                                <span class="badge bg-pending">停止中</span>
                                 {% elif disk.status == diskStatus.starting %}
-                                <span class="badge bg-pending">Starting</span>
+                                <span class="badge bg-pending">启动中</span>
                                 {% endif %}
                                 <input type="hidden" class="status" id="disk_status_{{ disk.id }}"
                                        value="{{ disk.status }}">
                             </td>
                             <td class="action" id="actionID_{{ disk.id }}">
                                 {% if disk.status == diskStatus.started %}
-                                <div title="Stop" class="btn-group ">
+                                <div title="停止" class="btn-group ">
                                     <form action="{{ url_for('disk_controller.stop_disk', disk_id =disk.id) }}"
                                           method="post">
                                         <input type="hidden" id="pageID" name="pageID" value="{{ pageID }}">
@@ -254,7 +254,7 @@
                                     </form>
                                 </div>
                                 {% elif disk.status == diskStatus.stopped %}
-                                <div title="Start" class="btn-group ">
+                                <div title="启动" class="btn-group ">
                                     <form action="{{ url_for('disk_controller.start_disk', disk_id =disk.id, pool = disk.pool) }}"
                                           method="post">
                                         <button type="submit" class="btn btn-default"
@@ -263,7 +263,7 @@
                                         </button>
                                     </form>
                                 </div>
-                                <div title="Edit" class="btn-group ">
+                                <div title="编辑" class="btn-group ">
                                     <form action="{{ url_for('disk_controller.edit_disk', disk_id =disk.id, pool = disk.pool) }}"
                                           method="post">
                                         <button type="submit" class="btn btn-default">
@@ -271,7 +271,7 @@
                                         </button>
                                     </form>
                                 </div>
-                                <div title="Delete" class="btn-group ">
+                                <div title="删除" class="btn-group ">
                                     <form action="{{ url_for('disk_controller.remove_disk', disk_id =disk.id, pool = disk.pool) }}"
                                           method="post">
                                         <button type="submit" class="btn btn-default"
@@ -280,7 +280,7 @@
                                         </button>
                                     </form>
                                 </div>
-                                <div title="Detach" class="btn-group ">
+                                <div title="分离" class="btn-group ">
                                     <form action="{{ url_for('disk_controller.detach_disk', disk_id =disk.id, pool = disk.pool) }}"
                                           method="post">
                                         <button type="submit" class="btn btn-default">
@@ -289,7 +289,7 @@
                                     </form>
                                 </div>
                                 {% elif disk.status == diskStatus.unattached %}
-                                <div title="Attach" class="btn-group ">
+                                <div title="连接" class="btn-group ">
                                     <form action="{{ url_for('disk_controller.attach_disk', disk_id =disk.id, pool = disk.pool) }}"
                                           method="post">
                                         <button type="submit" class="btn btn-default">
@@ -297,7 +297,7 @@
                                         </button>
                                     </form>
                                 </div>
-                                <div title="Delete" class="btn-group ">
+                                <div title="删除" class="btn-group ">
                                     <form action="{{ url_for('disk_controller.remove_disk', disk_id =disk.id, pool = disk.pool) }}"
                                           method="post">
                                         <button type="submit" class="btn btn-default"

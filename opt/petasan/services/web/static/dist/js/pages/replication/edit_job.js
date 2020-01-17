@@ -27,7 +27,7 @@ $(document).ready(function () {
         $("#mark").removeClass("fa-plus");
         $("#mark").addClass("fa-minus");
         $("#box_details_title").empty();
-        $("#box_details_title").text("Advanced");
+        $("#box_details_title").text("高级");
     }
 
 
@@ -52,12 +52,12 @@ $(".btn_collapse").click(function () {
         $("#mark").removeClass("fa-plus");
         $("#mark").addClass("fa-minus");
         $("#box_details_title").empty();
-        $("#box_details_title").text("Advanced");
+        $("#box_details_title").text("高级");
     } else if ($("#mark").hasClass("fa-minus")) {
         $("#mark").removeClass("fa-minus");
         $("#mark").addClass("fa-plus");
         $("#box_details_title").empty();
-        $("#box_details_title").text("Advanced");
+        $("#box_details_title").text("高级");
     }
 });
 
@@ -92,7 +92,7 @@ $("#addJob_form").submit(function (event) {
 
     else {
         jobName.closest('.form-group').removeClass('has-error');
-        $("#lblJobName").html("Name:" + "<font color='red'>*</font>");
+        $("#lblJobName").html("名称:" + "<font color='red'>*</font>");
     }
 
     // Validation of Service Node :
@@ -110,7 +110,7 @@ $("#addJob_form").submit(function (event) {
         event.preventDefault();
     } else {
         backup_node.closest('.form-group').removeClass('has-error');
-        $("#er_lblPools").html("Use Node:" + "<font color='red'>*</font>");
+        $("#er_lblPools").html("节点:" + "<font color='red'>*</font>");
 
     }
 
@@ -133,7 +133,7 @@ $("#addJob_form").submit(function (event) {
 
     else {
         source_disk.closest('.form-group').removeClass('has-error');
-        $("#lblSourceDisk").html("Source Disk:" + "<font color='red'>*</font>");
+        $("#lblSourceDisk").html("源盘:" + "<font color='red'>*</font>");
     }
 
 
@@ -155,7 +155,7 @@ $("#addJob_form").submit(function (event) {
 
     else {
         dest_cluster_name.closest('.form-group').removeClass('has-error');
-        $("#lblDestinationName").html("Destination Cluster Name:" + "<font color='red'>*</font>");
+        $("#lblDestinationName").html("目的集群名:" + "<font color='red'>*</font>");
     }
 
 
@@ -177,7 +177,7 @@ $("#addJob_form").submit(function (event) {
 
     else {
         destination_disk.closest('.form-group').removeClass('has-error');
-        $("#lblIDestinationDisk").html("Destination Disk:" + "<font color='red'>*</font>");
+        $("#lblIDestinationDisk").html("目的盘:" + "<font color='red'>*</font>");
     }
 
     // Validation of Schedule :
@@ -198,7 +198,7 @@ $("#addJob_form").submit(function (event) {
 
     else {
         selected_schedule.closest('.form-group').removeClass('has-error');
-        $("#lblSchedule").html("Schedule:" + "<font color='red'>*</font>");
+        $("#lblSchedule").html("计划:" + "<font color='red'>*</font>");
     }
 
 });

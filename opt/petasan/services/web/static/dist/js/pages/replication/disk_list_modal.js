@@ -65,7 +65,7 @@ function load_disks_2(get_disk_list_info_url) {
             disk_list = disks_list;
             // clear old data //
             $('#disksListBody').html("");
-            $('#disksList').append('<thead><tr><th></th><th>Disk Id</th><th>Size</th><th>Name</th><th>Created</th><th>Pool</th><th>IQN</th></tr></thead><tbody id="disksListBody">');
+            $('#disksList').append('<thead><tr><th></th><th>盘 Id</th><th>大小</th><th>名称</th><th>创建时间</th><th>池</th><th>IQN</th></tr></thead><tbody id="disksListBody">');
             source_disk_name = "";
 
             var body = "";
@@ -169,7 +169,7 @@ function load_dest_disks(get_disk_list_info_url) {
 
             // clear old data //
             $('#dest_disksListBody').html("");
-            $('#dest_disksList').append('<thead><tr><th></th><th>Disk Id</th><th>Size</th><th>Name</th><th>Created</th><th>Pool</th><th>IQN</th></tr></thead><tbody id="dest_disksListBody">');
+            $('#dest_disksList').append('<thead><tr><th></th><th>盘 Id</th><th>大小</th><th>名称</th><th>创建时间</th><th>池</th><th>IQN</th></tr></thead><tbody id="dest_disksListBody">');
             dest_disk_id = "";
 
             var body = "";

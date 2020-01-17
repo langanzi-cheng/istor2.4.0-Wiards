@@ -24,13 +24,13 @@
 {% block breadcrumb %}
 
 <ol class="breadcrumb">
-    <li><i class="fa fa-wrench"></i> Configuration</li>
-    <li><i class="fa fa-file"></i> EC Profiles</li>
+    <li><i class="fa fa-wrench"></i> 存储配置</li>
+    <li><i class="fa fa-file"></i> 纠删码规则</li>
 </ol>
 {% endblock %}
 
 
-{% block content_header%} EC Profiles{% endblock %}
+{% block content_header%} 纠删码规则{% endblock %}
 {% block content %}
 
 <style>
@@ -71,7 +71,7 @@
                         <form method="POST" action="{{ url_for('ec_profile_controller.add_ec_profile') }}" id="add_ec_profile">
                             <button type="submit" class="btn btn-primary">
                                 <i class="glyphicon glyphicon-plus"></i>
-                                Add EC Profile
+                                添加纠删码规则
                             </button>
                         </form>
                     </div>
@@ -84,10 +84,10 @@
 
                             <thead>
                             <tr>
-                                <th style="width: 25%">Name</th>
-                                <th style="width: 25%">K</th>
-                                <th style="width: 25%">M</th>
-                                <th style="width: 25%">Action</th>
+                                <th style="width: 25%">名称</th>
+                                <th style="width: 25%">数据盘数量</th>
+                                <th style="width: 25%">教研盘数量</th>
+                                <th style="width: 25%">操作</th>
                             </tr>
                             </thead>
 
@@ -116,7 +116,7 @@
 
                                 <td>
 
-                                    <div title="Delete profile" class="btn-group">
+                                    <div title="删除规则" class="btn-group">
 
                                         <form action="{{ url_for('ec_profile_controller.remove_profile',profile_name = profile.name) }}"
                                               method="POST" id="delete_profile_form">

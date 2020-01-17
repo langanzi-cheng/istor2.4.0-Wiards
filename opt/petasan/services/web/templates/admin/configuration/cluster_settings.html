@@ -23,11 +23,11 @@
 {% block title %}<title> General Settings </title>{% endblock %}
 {% block breadcrumb %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-wrench"></i> Configuration </li>
-    <li><i class="fa fa-gears"></i> General Settings</li>
+    <li><i class="fa fa-wrench"></i> 存储配置 </li>
+    <li><i class="fa fa-gears"></i> 全局设置</li>
 </ol>
 {% endblock %}
-{% block content_header %}General Settings{% endblock %}
+{% block content_header %}全局设置{% endblock %}
 {% block content %}
 <section class="content">
     <form id="cluster_setting" method="post"
@@ -69,7 +69,7 @@
                             <div class="col-md-5">
                                 <!--NTP Time server-->
                                 <div class="form-group">
-                                    <label id="lblInternetTimeServer">NTP Time Server:
+                                    <label id="lblInternetTimeServer">网络同步时间服务器:
                                         <i class=""></i></label>
                                     <input type="text" class="form-control"
                                            id="internet_time_server" name="internet_time_server"
@@ -142,7 +142,7 @@
                            #}-->
                         <div class="row">
                             <div class="box-header">
-                                <h3 class="box-title">SMTP Settings</h3>
+                                <h3 class="box-title">SMTP设置</h3>
                             </div>
                         </div>
                         <div style="margin-left: 12px; width: 98%; border: 1px solid #f4f4f4; padding: 10px;">
@@ -150,7 +150,7 @@
 
                                 <div class="col-md-5">
                                     <div class="form-group">
-                                        <label id="lblSMTPServer">SMTP Server:<i
+                                        <label id="lblSMTPServer">SMTP服务器:<i
                                                 class=""></i></label>
 
                                         <input type="text" class="form-control"
@@ -161,7 +161,7 @@
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group">
-                                        <label id="lblPortNum">Port Number:<font
+                                        <label id="lblPortNum">端口号:<font
                                                 color="red"></font><i
                                                 class=""></i></label>
 
@@ -181,17 +181,17 @@
                             <div class="row">
                                 <div class="col-md-5" id="server_authentication">
                                     <div class="form-group">
-                                        <label for="server_authentication">Server Authentication: </label>
+                                        <label for="server_authentication">服务器验证方式: </label>
                                         <select class="form-control" id="authentication_value"
                                                 name="authentication_value"
                                                 onchange="onChangeServerAuthenticationValue()">
                                             <option value="4" {% if form.authentication_value==4 %} selected="selected"
                                                     {% endif
-                                                    %}>Anonymous
+                                                    %}>匿名
                                             </option>
                                             <option value="3" {% if form.authentication_value==3 %} selected="selected"
                                                     {% endif
-                                                    %}>Basic Authentication
+                                                    %}>基本验证
                                             </option>
                                             <option value="1" {% if form.authentication_value==1 %} selected="selected"
                                                     {% endif
@@ -215,7 +215,7 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label id="lblEmail"><i
-                                                class=""></i>Sender Email:<font
+                                                class=""></i>发送邮件:<font
                                                 color="red"></font></label>
 
                                         <input class="form-control"
@@ -227,7 +227,7 @@
                                 <!-- password -->
                                 <div class="col-md-5">
                                     <div class="form-group" id="pass_hide">
-                                        <label id="lblPassword"><i class=""></i>Password:<font
+                                        <label id="lblPassword"><i class=""></i>密码:<font
                                                 color="red"></font></label>
                                         <input class="form-control" maxlength="50" type="password"
                                                id="userPassword" autocomplete="off"
@@ -240,7 +240,7 @@
                             <div class="row">
                                 <div class="col-md-2">
                                     <button id="test_mail" class="btn btn-primary" type="button" onclick="test_email()">
-                                        Test Email
+                                        测试邮件
                                     </button>
                                 </div>
                                 <div class="col-md-10"></div>
@@ -282,9 +282,9 @@
 
                     <div class="box-footer">
 
-                        <button type="submit" class="btn btn-primary pull-right">Save</button>
+                        <button type="submit" class="btn btn-primary pull-right">保存</button>
                         <button type="reset" style="margin-right: 20px" class="btn btn-default pull-right"
-                                id="cancelBtn">Cancel
+                                id="cancelBtn">取消
                         </button>
                     </div>
 

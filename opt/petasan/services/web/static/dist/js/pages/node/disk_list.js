@@ -496,27 +496,27 @@ function viewDiskInfo(disk_name)
 
         if (disksInfo[disk_name]['status'] === 0)
         {
-            diskStatus = "<span  class='badge bg-stop'>Down</span>";
+            diskStatus = "<span  class='badge bg-stop'>宕机</span>";
         }
         else if (disksInfo[disk_name]['status'] === 1)
         {
-            diskStatus = "<span class='badge bg-started'>Up</span>";
+            diskStatus = "<span class='badge bg-started'>运行</span>";
         }
         else if (disksInfo[disk_name]['status'] === 2)
         {
-            diskStatus = " <span class='badge bg-pending'>Adding</span>";
+            diskStatus = " <span class='badge bg-pending'>添加中</span>";
         }
         else if (disksInfo[disk_name]['status'] === 4)
         {
-            diskStatus = " <span class='badge bg-pending'>Adding</span>";
+            diskStatus = " <span class='badge bg-pending'>添加中</span>";
         }
         else if (disksInfo[disk_name]['status'] === 5)
         {
-            diskStatus = " <span class='badge bg-pending'>Adding</span>";
+            diskStatus = " <span class='badge bg-pending'>添加中</span>";
         }
         else if (disksInfo[disk_name]['status'] === 3)
         {
-            diskStatus = " <span class='badge bg-pending'>Deleting</span>";
+            diskStatus = " <span class='badge bg-pending'>删除中</span>";
         }
         else if (disksInfo[disk_name]['status'] === -1)
         {
@@ -621,31 +621,31 @@ function drawRows(diskData) {
 
     if (diskData['status'] === 0)
     {
-        diskStatus = "<span  class='badge bg-stop'>Down</span>";
+        diskStatus = "<span  class='badge bg-stop'>宕机</span>";
     }
     else if (diskData['status'] === 1)
     {
-        diskStatus = "<span class='badge bg-started'>Up</span>";
+        diskStatus = "<span class='badge bg-started'>运行</span>";
     }
     else if (diskData['status'] === 2)
     {
         isProcessing = true;
-        diskStatus = " <span class='badge bg-pending'>Adding</span>";
+        diskStatus = " <span class='badge bg-pending'>添加中</span>";
     }
     else if (diskData['status'] === 4)
     {
         isProcessing = true;
-        diskStatus = " <span class='badge bg-pending'>Adding</span>";
+        diskStatus = " <span class='badge bg-pending'>添加中</span>";
     }
     else if (diskData['status'] === 5)
     {
         isProcessing = true;
-        diskStatus = " <span class='badge bg-pending'>Adding</span>";
+        diskStatus = " <span class='badge bg-pending'>添加中</span>";
     }
     else if (diskData['status'] === 3)
     {
         isProcessing = true;
-        diskStatus = " <span class='badge bg-pending'>Deleting</span>";
+        diskStatus = " <span class='badge bg-pending'>删除中</span>";
     }
     else if (diskData['status'] === -1)
     {
@@ -703,7 +703,7 @@ function drawActions(disk_Used, disk_Status, disk_osd_id, disk_name)
 
         //action = "<div title='Add Device' class='btn-group'><form method='post'><button type='submit' onclick='addStorageDevice()'  id='add_device' class='btn btn-default'> <i class='fa fa-plus'></i></button></form></div>";
 
-        action = "<div title='Add Device' class='btn-group'><a id='add_device_"+ disk_name +"' href='#' data-target='#addStorageDeviceModal' data-controls-modal='modal-from-dom' data-backdrop='static' onclick=\"load_add_storage_device_options('" + disk_name + "');\" data-keyboard='true' class='btn btn-default'><i class='fa fa-plus'></i></a></div>";
+        action = "<div title='添加存储设备' class='btn-group'><a id='add_device_"+ disk_name +"' href='#' data-target='#addStorageDeviceModal' data-controls-modal='modal-from-dom' data-backdrop='static' onclick=\"load_add_storage_device_options('" + disk_name + "');\" data-keyboard='true' class='btn btn-default'><i class='fa fa-plus'></i></a></div>";
 
         //if (journalDiskList.length == 0) { //add osd
         //    var url_add_action_final = (url_add_action.slice(0, -1)) + '/' + disk_name;
@@ -720,7 +720,7 @@ function drawActions(disk_Used, disk_Status, disk_osd_id, disk_name)
     {
         var url_delete_action_final = url_delete_action.slice(0, -2) + '/' + disk_name + '/' + disk_osd_id;
         url_delete_action_final = url_delete_action_final.replace("//", "/");
-        action += "&nbsp<div title='Delete OSD' class='btn-group'> <form action=" + url_delete_action_final + " method='post'> <button type='submit' onclick=\"return doDelete('" + disk_name + "');\" id='delete_btn' class='btn btn-default'> <i class='fa fa-remove'></i> </button> </form> </div>";
+        action += "&nbsp<div title='删除 OSD' class='btn-group'> <form action=" + url_delete_action_final + " method='post'> <button type='submit' onclick=\"return doDelete('" + disk_name + "');\" id='delete_btn' class='btn btn-default'> <i class='fa fa-remove'></i> </button> </form> </div>";
     }
     //in case old journal from previous cluster
     //no osds linked to exist journal it means they are old from previous installation so show delete journal option
@@ -730,7 +730,7 @@ function drawActions(disk_Used, disk_Status, disk_osd_id, disk_name)
     {
         if (linked_osds_to_journal.length === 0) {
             var url_delete_journal_action_final = url_delete_journal_action.slice(0, -1) + '/' + disk_name;
-            action += "&nbsp<div title='Delete journal' class='btn-group'> <form action=" + url_delete_journal_action_final + " method='post'> <button type='submit' onclick=\"return doDeleteJournal('" + disk_name + "');\" id='delete_journal' class='btn btn-default'> <i class='fa fa-remove'></i> </button> </form> </div>";
+            action += "&nbsp<div title='删除 journal' class='btn-group'> <form action=" + url_delete_journal_action_final + " method='post'> <button type='submit' onclick=\"return doDeleteJournal('" + disk_name + "');\" id='delete_journal' class='btn btn-default'> <i class='fa fa-remove'></i> </button> </form> </div>";
         }
     }
 
@@ -738,12 +738,12 @@ function drawActions(disk_Used, disk_Status, disk_osd_id, disk_name)
     {
         if (linked_osds_to_cache.length === 0) {
             var url_delete_cache_action_final = url_delete_cache_action.slice(0, -1) + '/' + disk_name;
-            action += "&nbsp<div title='Delete cache' class='btn-group'> <form action=" + url_delete_cache_action_final + " method='post'> <button type='submit' onclick=\"return doDeleteCache('" + disk_name + "');\" id='delete_cache' class='btn btn-default'> <i class='fa fa-remove'></i> </button> </form> </div>";
+            action += "&nbsp<div title='删除 cache' class='btn-group'> <form action=" + url_delete_cache_action_final + " method='post'> <button type='submit' onclick=\"return doDeleteCache('" + disk_name + "');\" id='delete_cache' class='btn btn-default'> <i class='fa fa-remove'></i> </button> </form> </div>";
 
         }
     }
 
-    action += "&nbsp<div title='View Disk Info' class='btn-group'> <a href='#' data-toggle='modal' data-target='#viewDiskDetails' onclick=\"return viewDiskInfo('" + disk_name + "');\"  id='view_disk_info' class='btn btn-default'> <i class='fa fa-info'></i> </a> </div>";
+    action += "&nbsp<div title='查看盘信息' class='btn-group'> <a href='#' data-toggle='modal' data-target='#viewDiskDetails' onclick=\"return viewDiskInfo('" + disk_name + "');\"  id='view_disk_info' class='btn btn-default'> <i class='fa fa-info'></i> </a> </div>";
 
     return action;
 }
@@ -796,7 +796,7 @@ function getDiskList()
             }
 
             isGetDiskListRequestFinish = true;
-            $("#size").text("Showing 1 to " + diskData.length + " of " + diskData.length + " entries");
+            $("#size").text("显示 1 到 " + diskData.length + " 总共 " + diskData.length + " 条");
         },
         error: function () {
             isGetDiskListRequestFinish = true;

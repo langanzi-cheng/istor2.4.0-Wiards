@@ -23,11 +23,11 @@
 {% block title %}<title>Path Assignment List</title>{% endblock %}
 {% block breadcrumb %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-server"></i> Path Assignment</li>
-    <li><i class="fa fa-list"></i> Path Assignment List</li>
+    <li><i class="fa fa-server"></i> 路径分配</li>
+    <li><i class="fa fa-list"></i> 路径列表</li>
 </ol>
 {% endblock %}
-{% block content_header %}Path Assignment List{% endblock %}
+{% block content_header %}路径列表{% endblock %}
 {% block content %}
 <section class="content">
 
@@ -45,8 +45,8 @@
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                                     ×
                                 </button>
-                                <h4><i class="icon fa fa-info"></i>Info</h4>
-                                <h4>Paths re-assignment in progress...</h4>
+                                <h4><i class="icon fa fa-info"></i>信息</h4>
+                                <h4>正在进行路径重新分配...</h4>
 
                                 <div class="row">
                                     <div class="col-md-2"><h4 id="total"></h4></div>
@@ -66,11 +66,11 @@
                             <div class="col-md-10 form-group">
                                 <div style="margin-left: 6%">
                                 <a id="collapse_all" onclick="$.fn.collapseAll()" class="btn btn-primary"
-                                   data-toggle="tooltip" title="Collapse All"><i
+                                   data-toggle="tooltip" title="全部折叠"><i
                                         class="glyphicon glyphicon-chevron-right"></i><i
                                         class="glyphicon glyphicon-chevron-right"></i></a>
                                 <a id="expand_all" onclick="$.fn.expandAll()"
-                                   class="btn btn-primary" data-toggle="tooltip" title="Expand All"><i
+                                   class="btn btn-primary" data-toggle="tooltip" title="全部展开"><i
                                         class="glyphicon glyphicon-chevron-down"></i>&nbsp;<i
                                         class="glyphicon glyphicon-chevron-down"></i></a>
                             </div>
@@ -80,7 +80,7 @@
                                       id="reassign_path">
 
                                     <button class="btn btn-primary pull-right" id="reassign_button" type="submit">
-                                        Reassign Paths
+                                        重新分配路径
                                     </button>
 
                                 </form>

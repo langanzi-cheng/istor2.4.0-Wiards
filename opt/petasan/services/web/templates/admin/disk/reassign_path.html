@@ -23,11 +23,11 @@
 {% block title %}<title>Path Assignment</title>{% endblock %}
 {% block breadcrumb %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-server"></i> Path Assignment</li>
-    <li><i class="fa fa-list"></i> Path Assignment List</li>
+    <li><i class="fa fa-server"></i> 路径分配</li>
+    <li><i class="fa fa-list"></i> 路径列表</li>
 </ol>
 {% endblock %}
-{% block content_header %}Path Assignment List{% endblock %}
+{% block content_header %}路径列表{% endblock %}
 {% block content %}
 <section class="content">
 
@@ -67,19 +67,19 @@
                         <div class="row form-group"></div>
 
                         <div class="form-group">
-                                <div class="col-md-12"><label>Path Assignment :</label></div>
+                                <div class="col-md-12"><label>路径分配 :</label></div>
                                 <div class="form-group">
                                     <div class="col-md-2">
                                         <div class=""></div>
                                         <div class="col-md-12"><label class="radio-inline"><input type="radio" name="path_assignment_type"
                                                                        id="assign_manual" checked
-                                                                       onchange="onChangeSearchSection()" value="">Manual</label></div>
+                                                                       onchange="onChangeSearchSection()" value="">手动设置</label></div>
 
                                 </div>
                                 <div class="col-md-10" style="margin-left: -5%">
                                     <label class="radio-inline"><input type="radio" name="path_assignment_type"
                                                                        id="assign_automatic"
-                                                                       onchange="onChangeSearchSection()" value="">Automatic</label>
+                                                                       onchange="onChangeSearchSection()" value="">自动分配</label>
                                 </div>
                                 </div>
                         </div>
@@ -87,18 +87,17 @@
                         <div></div>
                         <div class="form-group" id="path_count_distribution" hidden>
 
-                            <div class="col-md-12"><label>Distribute by:</label></div>
+                            <div class="col-md-12"><label>分配方式:</label></div>
                             <div class="form-group">
                             <div class="col-md-2">
                                     <div class=""></div>
                                     <div class="col-md-12"><label class="radio-inline"><input type="radio" name=""
-                                                                   id="count_distribution" value="1">Path
-                                    Count</label></div>
+                                                                   id="count_distribution" value="1">路径数量</label></div>
 
                             </div>
                             <div class="col-md-10" style="margin-left: -5%">
                                 <label class="radio-inline"><input type="radio" name=""
-                                                                   id="resource_load" value="" disabled>Resource Load</label>
+                                                                   id="resource_load" value="" disabled>资源负载</label>
                             </div>
 
                         </div>
@@ -111,13 +110,13 @@
                              id="search_section">
                             <div class="row"></div>
                             <div class="form-group">
-                                <div class="col-md-12"><label>Search by : </label></div>
+                                <div class="col-md-12"><label>寻找方式 : </label></div>
                                 <div class="row"></div>
                                 <div class="col-md-5">
                                     <div class="col-md-4">
                                     <div class="form-group form-inline">
                                         <label class="radio-inline"><input type="radio" name="search_path"
-                                               checked onchange="onChangeSearchOptions()" id="search_by_name_radio" value="">Disk Name
+                                               checked onchange="onChangeSearchOptions()" id="search_by_name_radio" value="">盘名称
                                             :</label></div>
 
                                     </div><div>
@@ -130,7 +129,7 @@
                                         <div class="form-group form-inline">
                                             <div>
                                                 <label class="radio-inline"><input type="radio" name="search_path"
-                                                       onchange="onChangeSearchOptions()"  id="search_by_ip_radio" value="">Path
+                                                       onchange="onChangeSearchOptions()"  id="search_by_ip_radio" value="">路径
                                                     IP
                                                     :</label></div>
 
@@ -153,7 +152,7 @@
 
 
                                 <div class="col-md-2 form-group">
-                                    <button class="btn btn-primary" type="button" onclick="onSearchPaths()">Search
+                                    <button class="btn btn-primary" type="button" onclick="onSearchPaths()">搜索
                                     </button>
                                 </div>
                             </div>
@@ -182,9 +181,9 @@
                         <div id="assign_to">
                             <div class="col-md-4">
                                 <div class="form-group form-inline">
-                                    <label><i class=""></i>Assign To</label>
+                                    <label><i class=""></i>分配到</label>
                                     <select class="form-control" name="assign_to" id="nodes">
-                                        <option value="auto">Auto</option>
+                                        <option value="auto">自动</option>
                                     </select>
                                 </div>
                             </div>
@@ -192,7 +191,7 @@
 
                     </div>
                     <div class="box-footer">
-                        <button class="btn btn-primary pull-right" type="submit" id="assign_form">Assign</button>
+                        <button class="btn btn-primary pull-right" type="submit" id="assign_form">分配</button>
 
                     </div>
                 </form>

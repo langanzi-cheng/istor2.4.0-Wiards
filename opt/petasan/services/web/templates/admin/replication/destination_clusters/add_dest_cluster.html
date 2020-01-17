@@ -27,12 +27,12 @@
 {% block title %}<title> Add Destination Cluster </title>{% endblock %}
 {% block breadcrumb %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-clone"></i> Replication</li>
-    <li><i class="fa fa-desktop"></i> <a href="/replication/destination_clusters/list">Destination Clusters </a></li>
-    <li><i class="fa fa-plus"></i> Add Destination Cluster</li>
+    <li><i class="fa fa-clone"></i> 远程复制</li>
+    <li><i class="fa fa-desktop"></i> <a href="/replication/destination_clusters/list">目的集群 </a></li>
+    <li><i class="fa fa-plus"></i> 添加目的集群</li>
 </ol>
 {% endblock %}
-{% block content_header %}Add Destination Cluster {% endblock %}
+{% block content_header %}添加目的集群 {% endblock %}
 {% block content %}
 
 
@@ -51,8 +51,7 @@
                             <!-- Cluster Name -->
                             <div class=" col-md-7">
                                 <div class="form-group">
-                                    <label for="clusterName" id="clusterName_lbl" class="control-label">Cluster
-                                        Name:<font color="red">*</font></label>
+                                    <label for="clusterName" id="clusterName_lbl" class="control-label">集群名:<font color="red">*</font></label>
                                     <input id="clusterName" type="text" name="cluster_name" class="form-control" style="width: 100%">
 
                                 </div>
@@ -61,7 +60,7 @@
                             <!--  Destination Cluster IP -->
                             <div class="col-md-7">
                                 <div class="form-group">
-                                    <label id="lblDestinationIP" class="control-label">Remote IP:<font
+                                    <label id="lblDestinationIP" class="control-label">远端IP:<font
                                                 color="red">*</font>
                                         <i data-toggle="tooltip"
                                            title='{{ gettext("ui_admin_dest_cluster_ip_label_tooltip") }}'
@@ -85,7 +84,7 @@
                             <!-- User Name -->
                             <div class=" col-md-7">
                                 <div class="form-group">
-                                    <label for="userName" id="userName_lbl" class="control-label">User Name:<font
+                                    <label for="userName" id="userName_lbl" class="control-label">用户名:<font
                                             color="red">*</font></label>
                                     <input id="userName" type="text" name="userName" class="form-control" style="width: 100%">
 
@@ -94,7 +93,7 @@
 
                             <div class="col-md-7">
                                 <div class="form-group">
-                                    <label for="key" id="key_lbl">User's Private Key:<font color="red">*</font> </label>
+                                    <label for="key" id="key_lbl">用户密钥:<font color="red">*</font> </label>
                                     <textarea id="key" rows="7" name="key"
                                               class="form-control" style="width: 100%"></textarea>
                                 </div>
@@ -103,7 +102,7 @@
                             <div class="col-md-7">
 
                                 <button id="test_mail" class="btn btn-primary" type="button" onclick="return test_connection('{{ url_for('destination_cluster_controller.test_connection') }}')">
-                                        Test Connection
+                                        连接测试
                                     </button>
                                 <div>
                                     <br>
@@ -146,10 +145,10 @@
                                 <div class="form-group">
                                     <br>
                                     <div class="box-footer">
-                                        <button type="submit" class="btn btn-primary pull-right " value="submit">Save
+                                        <button type="submit" class="btn btn-primary pull-right " value="submit">保存
                                         </button>
                                         <button type="button" style="margin-right: 10px"
-                                                class="btn btn-default pull-right" id="cancelBtn" value="cancel">Cancel
+                                                class="btn btn-default pull-right" id="cancelBtn" value="cancel">取消
                                         </button>
 
                                     </div>

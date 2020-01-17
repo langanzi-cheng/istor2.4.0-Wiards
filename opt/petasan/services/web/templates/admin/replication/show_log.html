@@ -20,12 +20,12 @@
 {% block title%}<title>Job Log</title>{% endblock %}
 {% block breadcrumb %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-clone"></i> Replication</li>
-     <li><i class="fa fa-calendar"></i> <a href="{{ url_for('replication_controller.job_list') }}"> Jobs </a> </li>
-    <li><i class="fa fa-list"></i> Show Log</li>
+    <li><i class="fa fa-clone"></i> 远程复制</li>
+     <li><i class="fa fa-calendar"></i> <a href="{{ url_for('replication_controller.job_list') }}"> 复制任务 </a> </li>
+    <li><i class="fa fa-list"></i> 查看日志</li>
 </ol>
 {% endblock %}
-{% block content_header%}Job {{job_name}} Log{% endblock %}
+{% block content_header%}任务{{job_name}} 的日志{% endblock %}
 {% block content %}
 
 <section class="content">

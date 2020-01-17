@@ -244,9 +244,9 @@ function ajaxd(url_stop, url_start, url_edit, url_remove, url_detach, url_attach
                         if (diskData[key] == 1) {
                             var url_action = url_stop + id;
 
-                            $('#statusID_' + id).html(" <span class='badge bg-started'>Started</span>" +
+                            $('#statusID_' + id).html(" <span class='badge bg-started'>已启动</span>" +
                                 "<input type='hidden' class='status' id='disk_status_" + id + "' value='" + status + "'>");
-                            $('#actionID_' + id).html("<div title='Stop' class='btn-group action_buttons_" + id + "'><form action=" + url_action + " method='post'> " +
+                            $('#actionID_' + id).html("<div title='停止' class='btn-group action_buttons_" + id + "'><form action=" + url_action + " method='post'> " +
                                 "<button type='submit'   class='btn btn-default'><i class='fa fa-stop'></i> </button> </form></div>");
                         }
                         else if (diskData[key] == 2) {
@@ -258,42 +258,42 @@ function ajaxd(url_stop, url_start, url_edit, url_remove, url_detach, url_attach
                             url_action_remove = url_action_remove.replace("//", "/");
                             var url_action_detach = url_detach + id_pool;
                             url_action_detach = url_action_detach.replace("//", "/");
-                            $('#statusID_' + id).html(" <span class='badge bg-stop'>Stopped</span>" +
+                            $('#statusID_' + id).html(" <span class='badge bg-stop'>已停止</span>" +
                                 "<input type='hidden' class='status' id='disk_status_" + id + "' value='" + status + "'>");
                             $this.find('.action').css('width', '200px');
-                            $('#actionID_' + id).html("<div title='Start' class='btn-group action_buttons_" + id + "' style='padding-right: 4px;'><form action= " + url_action_start + " method='post'> " +
+                            $('#actionID_' + id).html("<div title='启动' class='btn-group action_buttons_" + id + "' style='padding-right: 4px;'><form action= " + url_action_start + " method='post'> " +
                                 "<button type='submit' class='btn btn-default' onclick=\"return doStart('" + dest_fsid + "','" + name + "','" + local_fsid + "');\"><i class='fa fa-play'></i> </button> </form></div>" +
-                                "<div title='Edit'class='btn-group action_buttons_" + id + "' style='padding-right: 4px;'><form action=" + url_action_edit + " method='post'> " +
+                                "<div title='编辑'class='btn-group action_buttons_" + id + "' style='padding-right: 4px;'><form action=" + url_action_edit + " method='post'> " +
                                 "<button type='submit' class='btn btn-default'><i class='fa fa-edit'></i> </button> </form></div>" +
-                                "<div title='Delete' class='btn-group action_buttons_" + id + "' style='padding-right: 4px;'><form action=" + url_action_remove + " method='post'> " +
+                                "<div title='删除' class='btn-group action_buttons_" + id + "' style='padding-right: 4px;'><form action=" + url_action_remove + " method='post'> " +
                                 "<button type='submit' class='btn btn-default' onclick=\"return doDelete('" + name + "');\"><i class='fa fa-remove'></i> </button> </form></div>" +
-                                "<div title='Detach' class='btn-group action_buttons_" + id + "'><form action=" + url_action_detach + " method='post'> " +
+                                "<div title='分离' class='btn-group action_buttons_" + id + "'><form action=" + url_action_detach + " method='post'> " +
                                 "<button type='submit' class='btn btn-default'><i class='fa fa-chain-broken'></i> </button> </form></div>");
                         }
                         else if (diskData[key] == 3) {
                             var url_action = url_attach + id_pool;
                             url_action = url_action.replace("//", "/");
-                            $('#statusID_' + id).html(" <span class='badge bg-unAttached' style='padding-right: 4px;'>Detached</span>" +
+                            $('#statusID_' + id).html(" <span class='badge bg-unAttached' style='padding-right: 4px;'>已分离</span>" +
                                 "<input type='hidden' class='status' id='disk_status_" + id + "' value='" + status + "'>");
-                            $('#actionID_' + id).html("<div title='Attach' class='btn-group action_buttons_" + id + "'><form action=" + url_action + " method='post'> " +
+                            $('#actionID_' + id).html("<div title='连接' class='btn-group action_buttons_" + id + "'><form action=" + url_action + " method='post'> " +
                                 "<button type='submit'   class='btn btn-default'><i class='fa fa-chain'></i> </button> </form></div>" +
-                                "<div title='Delete' class='btn-group action_buttons_" + id + "'><form action=" + url_action_remove + " method='post'> " +
+                                "<div title='删除' class='btn-group action_buttons_" + id + "'><form action=" + url_action_remove + " method='post'> " +
                                 "<button type='submit' class='btn btn-default' onclick=\"return doDelete('" + name + "');\"><i class='fa fa-remove'></i> </button> </form></div>");
                         }
                         else if (diskData[key] == 4) {
                             var url_action = url_edit + id;
                             $('.action_buttons_'+ id).hide();
-                            $('#statusID_' + id).html(" <span class='badge bg-pending'>Stopping</span>" +
+                            $('#statusID_' + id).html(" <span class='badge bg-pending'>停止中</span>" +
                                 "<input type='hidden' class='status' id='disk_status_" + id + "' value='" + status + "'>");
                         }
                         else if (diskData[key] == 5) {
                             $('.action_buttons_'+ id).hide();
-                            $('#statusID_' + id).html(" <span class='badge bg-pending'>Starting</span>" +
+                            $('#statusID_' + id).html(" <span class='badge bg-pending'>启动中</span>" +
                                 "<input type='hidden' class='status' id='disk_status_" + id + "' value='" + status + "'>");
                         }
                         else if (diskData[key] == 6) {
                             $('.action_buttons_'+ id).hide();
-                            $('#statusID_' + id).html(" <span class='badge bg-pending'>Deleting</span>" +
+                            $('#statusID_' + id).html(" <span class='badge bg-pending'>删除中</span>" +
                                 "<input type='hidden' class='status' id='disk_status_" + id + "' value='" + status + "'>");
                         }
 
