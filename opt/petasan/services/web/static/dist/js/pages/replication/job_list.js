@@ -55,7 +55,7 @@ function load_job_info(get_job_info_url) {
                 $("#mark").removeClass("fa-plus");
                 $("#mark").addClass("fa-minus");
                 $("#box_details_title").empty();
-                $("#box_details_title").text("Advanced");
+                $("#box_details_title").text("高级");
 
             }
 
@@ -74,12 +74,12 @@ $(".btn_collapse").click(function () {
         $("#mark").removeClass("fa-plus");
         $("#mark").addClass("fa-minus");
         $("#box_details_title").empty();
-        $("#box_details_title").text("Advanced");
+        $("#box_details_title").text("高级");
     } else if ($("#mark").hasClass("fa-minus")) {
         $("#mark").removeClass("fa-minus");
         $("#mark").addClass("fa-plus");
         $("#box_details_title").empty();
-        $("#box_details_title").text("Advanced");
+        $("#box_details_title").text("高级");
     }
 });
 

@@ -124,15 +124,15 @@
                                 {% if disk.replication_info|length > 0 %} <i class="fa fa-clone" data-toggle="tooltip"
                                                                              data-placement="right" data-html="true"
                                 {% if disk.replication_info['dest_cluster_fsid'] == cluster_fsid and disk.replication_info['dest_disk_id'] == disk.id %}
-                                title="<p style='text-align: left'>Disk is destination of replication job
-                                <br>Source Cluster: {{ disk.replication_info['src_cluster_name'] }} <br>
-                                Disk ID: {{ disk.replication_info['src_disk_id'] }}<br>
-                                Disk Name: {{ disk.replication_info['src_disk_name'] }} <br></p>"
+                                title="<p style='text-align: left'>该盘是复制任务的目的盘
+                                <br>源集群: {{ disk.replication_info['src_cluster_name'] }} <br>
+                                盘ID: {{ disk.replication_info['src_disk_id'] }}<br>
+                                盘名称: {{ disk.replication_info['src_disk_name'] }} <br></p>"
                                 {% elif disk.replication_info['src_cluster_fsid'] == cluster_fsid and disk.replication_info['src_disk_id'] == disk.id %}
-                                title="Disk is source of replication job <br>
-                                Destination Cluster: {{ disk.replication_info['dest_cluster_name'] }} <br>
-                                Disk ID: {{ disk.replication_info['dest_disk_id'] }}
-                                <br> Disk Name: {{ disk.replication_info['dest_disk_name'] }} <br>"
+                                title="该盘是复制任务的源盘<br>
+                                目的集群: {{ disk.replication_info['dest_cluster_name'] }} <br>
+                                盘ID: {{ disk.replication_info['dest_disk_id'] }}
+                                <br>盘: {{ disk.replication_info['dest_disk_name'] }} <br>"
                                 {% endif %}></input> {% endif %}
                             </td>
                             <td class="id" valign="center"><a href="#" data-toggle="modal" data-target="#exampleModal"

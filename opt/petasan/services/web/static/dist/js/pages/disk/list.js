@@ -57,7 +57,7 @@ function loadDiskStatus(disk_id) {
 
         if (id == disk_id && delete_job_id > 0) {
 
-            $('#statusID_' + disk_id).html("<span class='badge bg-pending'>Deleting</span>");
+            $('#statusID_' + disk_id).html("<span class='badge bg-pending'>删除中</span>");
         }
 
     });
@@ -126,8 +126,8 @@ function repeatAjax(disk_url) {
             var activePathsData = JSON.parse(data);
             $('#img').hide();
             $('#diskID').show();
-            $('#modal').html('Disk ' + id[3]);
-            $('#activePathsTable').append('<tr><th>IP</th><th>Interface</th><th style="width: 33%">Assigned Node</th></tr>');
+            $('#modal').html('盘 ' + id[3]);
+            $('#activePathsTable').append('<tr><th>IP</th><th>接口</th><th style="width: 33%">分配的节点</th></tr>');
             $('#activePathsTable').show();
 
             for (var key in activePathsData) {
